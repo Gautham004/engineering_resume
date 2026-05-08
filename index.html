@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Gautham Chandra — Aerospace Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared/site.css" />
+  <style>
+    body { overflow: hidden; }
+    .hero {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 24px;
+      z-index: 2;
+    }
+    .hero .eyebrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--fg-muted);
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      justify-content: center;
+    }
+    .hero .eyebrow .line {
+      width: 36px; height: 1px; background: var(--rule-strong);
+      display: inline-block;
+    }
+    .hero h1 {
+      margin: 0;
+      font-weight: 200;
+      font-size: clamp(36px, 6vw, 76px);
+      letter-spacing: clamp(6px, 1.2vw, 14px);
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+    .hero h1 .name {
+      display: block;
+      background: linear-gradient(to bottom, white 0%, #38495a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero h1 .role {
+      display: block;
+      font-size: clamp(14px, 1.6vw, 18px);
+      letter-spacing: clamp(8px, 1.6vw, 18px);
+      color: var(--fg-muted);
+      margin-top: 22px;
+      font-weight: 300;
+    }
+    .hero .actions {
+      display: flex;
+      gap: 16px;
+      margin-top: 56px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .hero .meta {
+      position: absolute;
+      bottom: 36px;
+      left: 0; right: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 48px;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--fg-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .hero .meta .blink {
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 8px;
+      vertical-align: middle;
+      animation: blink 2.4s ease-in-out infinite;
+      box-shadow: 0 0 10px var(--accent);
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+    @media (max-width: 640px) {
+      .hero .meta { padding: 0 24px; flex-direction: column; gap: 8px; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <span class="dot"></span>
+      <span>G &middot; CHANDRA</span>
+    </a>
+    <ul>
+      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="experience.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="eyebrow">
+      <span class="line"></span>
+      <span>Portfolio &middot; MMXXVI</span>
+      <span class="line"></span>
+    </div>
+    <h1>
+      <span class="name">Gautham Chandra</span>
+      <span class="role">Aerospace Engineer</span>
+    </h1>
+    <div class="actions">
+      <a class="btn" href="about.html">Enter</a>
+      <a class="btn btn-ghost" href="resume.html">Download Resume</a>
+    </div>
+    <div class="meta">
+      <div><span class="blink"></span>Available &middot; Q2 2026</div>
+      <div>Aerodynamics &middot; UAV &middot; Flight Test</div>
+    </div>
+  </section>
+
+  <script src="shared/stars.js"></script>
+  <script>
+    mountStars({ density: 'full', speed: 1, dim: 0 });
+  </script>
+</body>
+</html>

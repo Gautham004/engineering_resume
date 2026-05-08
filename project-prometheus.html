@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>PROMETHEUS Mars Communications - Gautham Chandra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared/site.css" />
+  <link rel="stylesheet" href="shared/project.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <span class="dot"></span>
+      <span>G &middot; CHANDRA</span>
+    </a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="active" href="experience.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <div class="page-inner">
+      <a class="back-link" href="experience.html">&larr; All Projects</a>
+
+      <header class="page-head">
+        <div class="kicker">Project / 05 &middot; Space</div>
+        <h1>PROMETHEUS &mdash; Mars Comms</h1>
+      </header>
+
+      <div class="proj-meta-strip">
+        <div><span class="lab">Year</span><span class="val">2025</span></div>
+        <div><span class="lab">Context</span><span class="val">Space Systems</span></div>
+        <div><span class="lab">Subsystem</span><span class="val">Communications</span></div>
+        <div><span class="lab">Status</span><span class="val">Concept</span></div>
+      </div>
+
+      <div class="proj-hero ph">[ HERO &middot; PROMETHEUS COMMS &middot; 16:9 ]</div>
+
+      <div class="proj-grid">
+        <aside class="proj-side">
+          <div>
+            <h3>Tools</h3>
+            <ul>
+              <li>MATLAB</li>
+              <li>Link-budget tooling</li>
+              <li>Trade-study spreadsheets</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Domain</h3>
+            <p class="row">Systems Engineering &middot; Space Comms &middot; Trade Studies</p>
+          </div>
+          <div>
+            <h3>Deliverables</h3>
+            <p class="row">Architecture trades, link budgets across relay / DTE / ISL paths, sub-system design notes.</p>
+          </div>
+          <div>
+            <h3>Links</h3>
+            <a href="#">Concept brief &nearr;</a>
+            <a href="#">Trade-study workbook &nearr;</a>
+          </div>
+        </aside>
+
+        <article class="proj-body">
+          <p class="lede">
+            A communications subsystem concept for a Mars orbital
+            reflective constellation - relay, direct-to-Earth, and
+            inter-satellite link trade studies, with link budgets to back
+            them up.
+          </p>
+
+          <section class="proj-section">
+            <h2>Overview</h2>
+            <p>
+              PROMETHEUS is a concept Mars orbital constellation. My slice
+              was the comms subsystem - what links you carry, when you
+              relay, how they close, and what that costs in mass, power,
+              and complexity.
+            </p>
+          </section>
+
+          <section class="proj-section">
+            <h2>Problem</h2>
+            <p>
+              Mars comms is constrained by geometry, range, and limited
+              ground-station availability. A constellation has to make
+              tradeoffs between direct-to-Earth (DTE) bursts, relay through
+              existing Mars-orbit assets, and inter-satellite links (ISL)
+              within the constellation itself.
+            </p>
+          </section>
+
+          <section class="proj-section">
+            <h2>Approach</h2>
+            <ul>
+              <li>Built link budgets in MATLAB for DTE, relay, and ISL paths at representative geometries.</li>
+              <li>Set up a trade-study matrix scoring architectures on data return, latency, mass, and power.</li>
+              <li>Captured assumptions explicitly so the trade can be re-run when downstream subsystems update their numbers.</li>
+              <li>Wrote a short design brief that other subsystem leads could read in one sitting.</li>
+            </ul>
+          </section>
+
+          <figure class="proj-figure">
+            <div class="ph">[ FIG 01 &middot; LINK BUDGET TRADES ]</div>
+            <figcaption>Fig 01 &middot; Link-budget tradespace across DTE / relay / ISL</figcaption>
+          </figure>
+
+          <section class="proj-section">
+            <h2>Outcome</h2>
+            <ul>
+              <li>A defensible architecture recommendation, with link budgets and assumptions visible in one place.</li>
+              <li>Cleaner shared language across subsystems thanks to the trade matrix.</li>
+              <li>A lot of practice doing systems-engineering work where the right answer depends on what your team values most.</li>
+            </ul>
+          </section>
+        </article>
+      </div>
+
+      <div class="proj-nav">
+        <a href="project-drone-builds.html"><span class="dir">Prev</span>&larr; Drone Builds</a>
+        <a href="experience.html"><span class="dir">All</span>Projects index &nearr;</a>
+      </div>
+
+      <div class="foot">
+        <span>~/projects/prometheus.md</span>
+        <span>05.06.2026</span>
+      </div>
+    </div>
+  </main>
+
+  <script src="shared/stars.js"></script>
+  <script>
+    mountStars({ density: 'soft', speed: 0.5, dim: 0.6 });
+  </script>
+</body>
+</html>

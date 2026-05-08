@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Resume — Gautham Chandra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared/site.css" />
+  <style>
+    .resume-actions {
+      display: flex; gap: 12px; margin-bottom: 32px;
+      justify-content: flex-end;
+    }
+    .doc {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--rule);
+      padding: 64px 72px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .doc-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 36px;
+    }
+    .doc-head .name {
+      font-size: 32px;
+      font-weight: 200;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .doc-head .role {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--accent);
+      letter-spacing: 2px;
+      margin-top: 8px;
+    }
+    .doc-head .contact {
+      text-align: right;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--fg-muted);
+      letter-spacing: 1px;
+      line-height: 1.9;
+    }
+    .doc-head .contact a { color: var(--fg-muted); }
+    .doc-head .contact a:hover { color: var(--fg); }
+
+    .res-section { margin-bottom: 36px; }
+    .res-section h2 {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin: 0 0 18px;
+      font-weight: 400;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .res-job {
+      display: grid;
+      grid-template-columns: 1fr 140px;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    .res-job .title {
+      font-size: 15px;
+      font-weight: 400;
+      margin: 0 0 2px;
+      letter-spacing: 0.5px;
+    }
+    .res-job .co {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--fg-muted);
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .res-job .when {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--fg-muted);
+      letter-spacing: 1px;
+      text-align: right;
+    }
+    .res-job ul {
+      margin: 0; padding: 0; list-style: none;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .res-job li {
+      font-size: 13px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.82);
+      padding-left: 14px;
+      position: relative;
+    }
+    .res-job li::before {
+      content: '\00B7';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .res-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 24px 32px;
+    }
+    .res-grid .lab {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--fg-muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .res-grid .val {
+      font-size: 13px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.75;
+    }
+
+    .summary {
+      font-size: 14px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.85);
+      max-width: 70ch;
+    }
+
+    @media (max-width: 760px) {
+      .doc { padding: 32px 24px; }
+      .doc-head { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .doc-head .contact { text-align: left; }
+      .res-job { grid-template-columns: 1fr; gap: 4px; }
+      .res-job .when { text-align: left; }
+      .res-grid { grid-template-columns: 1fr; gap: 4px 0; }
+      .res-grid .lab { margin-top: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <span class="dot"></span>
+      <span>G &middot; CHANDRA</span>
+    </a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="experience.html">Projects</a></li>
+      <li><a class="active" href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <div class="page-inner">
+      <header class="page-head">
+        <div class="kicker">03 / Resume</div>
+        <h1>Resume</h1>
+      </header>
+
+      <div class="resume-actions">
+        <button class="btn btn-ghost" onclick="window.print()">Print / PDF</button>
+        <a class="btn btn-ghost" href="#" onclick="alert('Placeholder — wire to /downloads/gautham-chandra-resume.pdf'); return false;">Download Resume .pdf</a>
+        <a class="btn btn-ghost" href="#" onclick="alert('Placeholder — wire to /downloads/gautham-chandra-portfolio.pdf'); return false;">Download Portfolio .pdf</a>
+      </div>
+
+      <section class="doc">
+        <header class="doc-head">
+          <div>
+            <h2 class="name">Gautham Chandra</h2>
+            <div class="role">Aerospace Engineer &middot; Norman, OK</div>
+          </div>
+          <div class="contact">
+            gautham@example.com<br />
+            linkedin.com/in/gauthamchandra<br />
+            github.com/gauthamchandra
+          </div>
+        </header>
+
+        <section class="res-section">
+          <h2>Summary</h2>
+          <p class="summary">
+            Aerospace engineering student working at the intersection of
+            aerodynamics, autonomous UAV systems, and hands-on flight test.
+            Comfortable from CFD-driven design through carbon-fiber
+            fabrication to range-day operations &mdash; the full path from
+            whiteboard to runway.
+          </p>
+        </section>
+
+        <section class="res-section">
+          <h2>Experience</h2>
+
+          <div class="res-job">
+            <div>
+              <h3 class="title">Aerodynamics Lead</h3>
+              <div class="co">OU AIAA Design / Build / Fly</div>
+              <ul>
+                <li>Led airfoil screening and selection across XFOIL, XFLR5, and AVL for the team's competition aircraft.</li>
+                <li>Drove wing planform and stability analysis against mission-scoring tradeoffs.</li>
+                <li>Coordinated wind-tunnel test campaigns &mdash; instrumentation, runs, and CL/CD/CM data reduction.</li>
+                <li>Authored the team's aero design-review template, now used across structures and propulsion.</li>
+              </ul>
+            </div>
+            <div class="when">2025 &mdash; 2026<br />Norman &middot; OK</div>
+          </div>
+
+          <div class="res-job">
+            <div>
+              <h3 class="title">Undergraduate Research Assistant</h3>
+              <div class="co">AIROU / AIRLAB, University of Oklahoma</div>
+              <ul>
+                <li>Built and maintained ROS2 nodes for sensor integration, telemetry, and Gazebo SITL workflows.</li>
+                <li>Helped plan and execute flight tests &mdash; pre-flight checks, range ops, post-flight log analysis.</li>
+                <li>Tightened the dev loop between simulation and field test for a small UAV autonomy stack.</li>
+              </ul>
+            </div>
+            <div class="when">2024 &mdash; Present<br />Norman &middot; OK</div>
+          </div>
+
+          <div class="res-job">
+            <div>
+              <h3 class="title">Aerospace Intern</h3>
+              <div class="co">Solakair</div>
+              <ul>
+                <li>Contributed to early-stage CAD models, layout iteration, and design documentation.</li>
+                <li>Applied systems thinking across aerodynamic, structural, and packaging tradeoffs.</li>
+                <li>Drafted technical notes and assumptions feeding downstream analysis tasks.</li>
+              </ul>
+            </div>
+            <div class="when">2025<br />Remote</div>
+          </div>
+
+          <div class="res-job">
+            <div>
+              <h3 class="title">System Administrator</h3>
+              <div class="co">University of Oklahoma IT</div>
+              <ul>
+                <li>Triaged hardware, software, networking, and account issues for faculty, staff, and students.</li>
+                <li>Built customer-facing technical communication chops &mdash; clear writeups, calm escalation, useful runbooks.</li>
+              </ul>
+            </div>
+            <div class="when">2025 &mdash; Present<br />Norman &middot; OK</div>
+          </div>
+        </section>
+
+        <section class="res-section">
+          <h2>Education</h2>
+          <div class="res-job">
+            <div>
+              <h3 class="title">B.S. Aerospace Engineering</h3>
+              <div class="co">University of Oklahoma</div>
+              <ul>
+                <li>Coursework: Aerodynamics, Flight Mechanics, Orbital Mechanics, Controls, Structures, Propulsion.</li>
+                <li>Coursework: CFD / Numerical Methods, Design / Manufacturing.</li>
+                <li>Active in AIAA Design/Build/Fly and AIROU autonomous-flight research.</li>
+              </ul>
+            </div>
+            <div class="when">Expected May 2026<br />Norman &middot; OK</div>
+          </div>
+        </section>
+
+        <section class="res-section">
+          <h2>Skills</h2>
+          <div class="res-grid">
+            <div class="lab">Aero Analysis</div>
+            <div class="val">Aerodynamics, Flight Mechanics, Stability, CFD, Wind-Tunnel Testing</div>
+            <div class="lab">CAD / Sim</div>
+            <div class="val">SolidWorks, ANSYS Fluent, XFLR5, XFOIL, AVL, MATLAB</div>
+            <div class="lab">UAV / Robotics</div>
+            <div class="val">ROS2, PX4, Pixhawk, QGroundControl, OpenCV, Raspberry Pi, Arduino</div>
+            <div class="lab">Manufacturing</div>
+            <div class="val">Carbon-fiber wet layup, 3D printing, laser cutting, CNC support, soldering</div>
+            <div class="lab">Languages</div>
+            <div class="val">Python, MATLAB, C / C++, Java</div>
+            <div class="lab">Environment</div>
+            <div class="val">Linux, Git, command-line workflows</div>
+            <div class="lab">Practice</div>
+            <div class="val">Flight-test setup, design reviews, technical writing, range ops</div>
+          </div>
+        </section>
+
+        <section class="res-section">
+          <h2>Portfolio</h2>
+          <p class="summary" style="margin-bottom: 18px;">
+            A long-form PDF portfolio is available on request &mdash; covers
+            the projects below with figures, photos, design rationale, and
+            references. Web case studies live under
+            <a href="experience.html" style="color: var(--accent);">/projects</a>.
+          </p>
+          <div class="res-grid">
+            <div class="lab">PDF</div>
+            <div class="val">
+              <a href="#" onclick="alert('Placeholder — wire to /downloads/gautham-chandra-portfolio.pdf'); return false;" style="color: var(--accent);">Download portfolio (.pdf)</a>
+              &nbsp;&middot;&nbsp; <span style="color: var(--fg-muted);">v 05.06.2026</span>
+            </div>
+            <div class="lab">Web</div>
+            <div class="val">
+              <a href="experience.html" style="color: var(--accent);">portfolio &middot; web case studies</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="res-section">
+          <h2>Selected Projects</h2>
+          <div class="res-grid">
+            <div class="lab">2025 &middot; AIAA DBF</div>
+            <div class="val"><b><a href="project-dbf.html" style="color: inherit;">DBF Aircraft Design</a></b> &mdash; airfoil selection, stability sizing, manufacturable wing geometry.</div>
+            <div class="lab">2024 &middot; AIROU</div>
+            <div class="val"><b><a href="project-uav-autonomy.html" style="color: inherit;">UAV Autonomy</a></b> &mdash; ROS2 stack, sensor integration, Gazebo SITL, field test.</div>
+            <div class="lab">2025 &middot; Space</div>
+            <div class="val"><b><a href="project-prometheus.html" style="color: inherit;">PROMETHEUS Mars Comms</a></b> &mdash; relay / DTE / ISL trade studies and link budgets for a Mars orbital constellation.</div>
+            <div class="lab">2024 &middot; Personal</div>
+            <div class="val"><b><a href="project-drone-builds.html" style="color: inherit;">Drone Builds</a></b> &mdash; FPV quad and small autonomous fixed-wing platforms, built and tuned end-to-end.</div>
+          </div>
+        </section>
+      </section>
+
+      <div class="foot">
+        <span>~/resume.pdf</span>
+        <span>v 05.06.2026</span>
+      </div>
+    </div>
+  </main>
+
+  <script src="shared/stars.js"></script>
+  <script>
+    mountStars({ density: 'soft', speed: 0.4, dim: 0.6 });
+  </script>
+</body>
+</html>

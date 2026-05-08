@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>About - Gautham Chandra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared/site.css" />
+  <style>
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+      margin-bottom: 96px;
+    }
+    .portrait {
+      aspect-ratio: 4/5;
+      width: 100%;
+      max-width: 420px;
+    }
+    .portrait .ph { width: 100%; height: 100%; }
+    .intro .body {
+      font-size: 17px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.82);
+      font-weight: 300;
+    }
+    .intro .body p { margin: 0 0 22px; text-wrap: pretty; }
+    .intro .body .lede {
+      font-size: 22px;
+      line-height: 1.55;
+      color: var(--fg);
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+    .quick-facts {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      background: var(--rule);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 96px;
+    }
+    .quick-facts .fact {
+      background: var(--bg);
+      padding: 28px 24px;
+    }
+    .quick-facts .fact .label {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--fg-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .quick-facts .fact .value {
+      font-size: 28px;
+      font-weight: 200;
+      letter-spacing: 1px;
+    }
+    .quick-facts .fact .sub {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--fg-muted);
+      margin-top: 6px;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 48px;
+      margin-bottom: 96px;
+    }
+    .skills .col h3 {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--accent);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+      font-weight: 400;
+    }
+    .skills .col h3:not(:first-child) { margin-top: 28px; }
+    .skills .col ul {
+      margin: 0; padding: 0; list-style: none;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .skills .col li {
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .skills .col li .yrs {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--fg-muted);
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 900px) {
+      .intro { grid-template-columns: 1fr; gap: 32px; }
+      .skills { grid-template-columns: 1fr; gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <span class="dot"></span>
+      <span>G &middot; CHANDRA</span>
+    </a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="about.html">About</a></li>
+      <li><a href="experience.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <div class="page-inner">
+      <header class="page-head">
+        <div class="kicker">01 / About</div>
+        <h1>About</h1>
+      </header>
+
+      <section class="intro">
+        <div class="portrait">
+          <div class="ph">[ portrait &middot; 4:5 ]</div>
+        </div>
+        <div class="body">
+          <p class="lede">
+            I'm an aerospace engineer working at the seam between aerodynamics,
+            autonomous UAV systems, and hands-on flight test - the kind of
+            work where the math has to land on a runway.
+          </p>
+          <p>
+            I take ideas from a whiteboard to a tested system, pairing
+            first-principles thinking with CAD, simulation, manufacturing,
+            electronics, and code. CFD-driven airfoil studies, ROS2 autonomy
+            stacks, carbon-fiber wings, and the test ops that prove they
+            actually work.
+          </p>
+          <p>
+            I'm finishing a B.S. in Aerospace Engineering at the University of
+            Oklahoma. Outside class, I lead aero on the AIAA Design/Build/Fly
+            team, contribute to autonomous-flight research at AIROU, and have
+            interned in early-stage aerospace design at Solakair.
+          </p>
+          <p>
+            Off the field I'm usually building drones, soldering something,
+            or reading propulsion papers I'll only half-understand on the
+            first pass.
+          </p>
+        </div>
+      </section>
+
+      <section class="quick-facts">
+        <div class="fact">
+          <div class="label">Engineering Projects</div>
+          <div class="value">10+</div>
+          <div class="sub">since 2023</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <span class="num">02</span>
+          <h2>Stack &amp; Skills</h2>
+        </div>
+        <div class="skills">
+          <div class="col">
+            <h3>Disciplines</h3>
+            <ul>
+              <li>Aerodynamics</li>
+              <li>Flight Mechanics</li>
+              <li>UAV Autonomy</li>
+              <li>CFD &amp; Numerical Methods</li>
+              <li>Controls &amp; Stability</li>
+              <li>Space Systems</li>
+            </ul>
+            <h3>Languages</h3>
+            <ul>
+              <li>Python <span class="yrs">4y</span></li>
+              <li>MATLAB <span class="yrs">3y</span></li>
+              <li>C / C++ <span class="yrs">2y</span></li>
+              <li>Java <span class="yrs">2y</span></li>
+            </ul>
+            <h3>Environment</h3>
+            <ul>
+              <li>Linux <span class="yrs">3y</span></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>CAD &amp; Simulation</h3>
+            <ul>
+              <li>SolidWorks - aircraft &amp; UAV assemblies <span class="yrs">3y</span></li>
+              <li>ANSYS Fluent - external aero, mesh studies <span class="yrs">2y</span></li>
+              <li>XFLR5 / XFOIL / AVL - airfoil &amp; planform sizing <span class="yrs">3y</span></li>
+              <li>MATLAB - performance, controls, link budgets <span class="yrs">3y</span></li>
+            </ul>
+            <h3>UAV &amp; Robotics</h3>
+            <ul>
+              <li>ROS2 - autonomy nodes, Gazebo SITL <span class="yrs">2y</span></li>
+              <li>PX4 &middot; Pixhawk &middot; QGroundControl <span class="yrs">2y</span></li>
+              <li>OpenCV - onboard vision pipelines <span class="yrs">2y</span></li>
+              <li>Raspberry Pi &middot; Arduino &middot; SpeedyBee <span class="yrs">3y</span></li>
+            </ul>
+            <h3>Manufacturing &amp; Test</h3>
+            <ul>
+              <li>Carbon-fiber wet layup, foam-core wings <span class="yrs">2y</span></li>
+              <li>3D printing, laser cutting, CNC support <span class="yrs">3y</span></li>
+              <li>Soldering, harnessing, flight-test setup <span class="yrs">3y</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="foot">
+        <span>~/about.md</span>
+        <span>last updated &middot; 05.06.2026</span>
+      </div>
+    </div>
+  </main>
+
+  <script src="shared/stars.js"></script>
+  <script>
+    mountStars({ density: 'soft', speed: 0.6, dim: 0.5 });
+  </script>
+</body>
+</html>

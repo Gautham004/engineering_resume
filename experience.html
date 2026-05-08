@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Projects — Gautham Chandra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared/site.css" />
+  <style>
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .filter-bar .label {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--fg-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-right: 8px;
+    }
+    .chip {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--fg-muted);
+      letter-spacing: 1px;
+      padding: 8px 14px;
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .chip:hover { color: var(--fg); border-color: var(--rule-strong); }
+    .chip.active {
+      color: var(--bg);
+      background: var(--fg);
+      border-color: var(--fg);
+    }
+
+    /* Projects grid */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .project {
+      border: 1px solid var(--rule);
+      padding: 28px;
+      transition: border-color 0.25s ease, transform 0.25s ease, opacity 0.3s ease, filter 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      color: var(--fg);
+    }
+    .project:hover { border-color: var(--rule-strong); transform: translateY(-2px); }
+    .project.dimmed { opacity: 0.2; filter: grayscale(1); pointer-events: none; }
+    .project .ph { aspect-ratio: 16/9; }
+    .project .meta {
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--fg-muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .project h4 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+    .project p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--fg-muted);
+      line-height: 1.7;
+    }
+    .project .stack {
+      display: flex; flex-wrap: wrap; gap: 4px;
+      margin-top: auto;
+      padding-top: 8px;
+    }
+    .project .stack span {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--fg-dim);
+      letter-spacing: 1px;
+    }
+    .project .stack span:not(:last-child)::after { content: ' \00B7 '; }
+    .project .open {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* Experience timeline */
+    .experience-block { margin-top: 96px; }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .role {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 48px;
+      padding: 48px 0;
+      border-top: 1px solid var(--rule);
+    }
+    .role:last-child { border-bottom: 1px solid var(--rule); }
+    .role .when {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--fg-muted);
+      letter-spacing: 1.5px;
+      line-height: 1.7;
+    }
+    .role .when .yr {
+      color: var(--fg);
+      font-size: 13px;
+      letter-spacing: 2px;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .role .when .loc { display: block; margin-top: 14px; color: var(--fg-dim); }
+    .role .body h3 {
+      margin: 0 0 6px;
+      font-size: 26px;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+    .role .body .co {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .role .body p {
+      margin: 0 0 18px;
+      font-size: 15px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.78);
+      max-width: 68ch;
+    }
+    .role .body ul.bullets {
+      margin: 0 0 18px;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .role .body ul.bullets li {
+      font-size: 14px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.82);
+      padding-left: 22px;
+      position: relative;
+      max-width: 68ch;
+    }
+    .role .body ul.bullets li::before {
+      content: '\2192';
+      position: absolute;
+      left: 0; top: 0;
+      color: var(--accent-dim);
+      font-family: var(--mono);
+    }
+    .role .tags {
+      display: flex; flex-wrap: wrap; gap: 6px;
+      margin-top: 16px;
+    }
+    .role .tags span {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--fg-muted);
+      letter-spacing: 1px;
+      padding: 4px 10px;
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .project-grid { grid-template-columns: 1fr; }
+      .role { grid-template-columns: 1fr; gap: 16px; padding: 32px 0; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <span class="dot"></span>
+      <span>G &middot; CHANDRA</span>
+    </a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="active" href="experience.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <div class="page-inner">
+      <header class="page-head">
+        <div class="kicker">02 / Projects</div>
+        <h1>Projects</h1>
+      </header>
+
+      <div class="filter-bar">
+        <span class="label">Filter &middot;</span>
+        <button class="chip active" data-tag="all">All</button>
+        <button class="chip" data-tag="aircraft">Aircraft</button>
+        <button class="chip" data-tag="uav">UAV</button>
+        <button class="chip" data-tag="cfd">CFD / Aero</button>
+        <button class="chip" data-tag="hardware">Hardware</button>
+        <button class="chip" data-tag="space">Space</button>
+      </div>
+
+      <section>
+        <div class="project-grid">
+          <a class="project" data-tags="aircraft cfd" href="project-dbf.html">
+            <div class="ph">[ DBF &middot; AIRCRAFT ]</div>
+            <div class="meta"><span>2025 &middot; AIAA DBF</span><span>Aircraft</span></div>
+            <h4>DBF Aircraft Design</h4>
+            <p>Designed and analyzed a fixed-wing competition aircraft - airfoil selection, stability sizing, and manufacturable wing geometry.</p>
+            <div class="stack"><span>XFLR5</span><span>XFOIL</span><span>AVL</span><span>SolidWorks</span><span>ANSYS Fluent</span></div>
+            <div class="open">View case study &nearr;</div>
+          </a>
+          <a class="project" data-tags="uav" href="project-uav-autonomy.html">
+            <div class="ph">[ UAV &middot; AUTONOMY ]</div>
+            <div class="meta"><span>2024 &middot; AIROU</span><span>UAV</span></div>
+            <h4>UAV Autonomy - AIROU</h4>
+            <p>Autonomous UAV research stack: ROS2 nodes, sensor integration, Gazebo simulation, and field-test workflows.</p>
+            <div class="stack"><span>ROS2</span><span>Python</span><span>PX4</span><span>OpenCV</span><span>Gazebo</span></div>
+            <div class="open">View case study &nearr;</div>
+          </a>
+          <a class="project" data-tags="cfd" href="project-cfd.html">
+            <div class="ph">[ CFD &middot; STREAMLINES ]</div>
+            <div class="meta"><span>2025 &middot; Coursework</span><span>CFD</span></div>
+            <h4>CFD &amp; Aerodynamics</h4>
+            <p>Airfoil performance studies and design tradeoffs across CFD and panel-method tools, with mesh and convergence checks.</p>
+            <div class="stack"><span>ANSYS Fluent</span><span>XFLR5</span><span>XFOIL</span><span>MATLAB</span></div>
+            <div class="open">View case study &nearr;</div>
+          </a>
+          <a class="project" data-tags="uav hardware" href="project-drone-builds.html">
+            <div class="ph">[ DRONE &middot; BUILD ]</div>
+            <div class="meta"><span>2024 &middot; Personal</span><span>Hardware</span></div>
+            <h4>Drone Builds &amp; Flight Test</h4>
+            <p>Custom UAV platforms - FPV quad and small autonomous fixed-wing - built, tuned, and flown end-to-end.</p>
+            <div class="stack"><span>Pixhawk</span><span>SpeedyBee</span><span>QGroundControl</span><span>Arduino</span><span>RPi</span></div>
+            <div class="open">View case study &nearr;</div>
+          </a>
+          <a class="project" data-tags="space" href="project-prometheus.html">
+            <div class="ph">[ PROMETHEUS &middot; COMM ]</div>
+            <div class="meta"><span>2025 &middot; Space Systems</span><span>Space</span></div>
+            <h4>PROMETHEUS Mars Communications</h4>
+            <p>Concept communications subsystem for a Mars orbital reflective constellation - relay, DTE, and inter-satellite link trade studies.</p>
+            <div class="stack"><span>Systems Engineering</span><span>Link Budgets</span><span>Trade Studies</span><span>MATLAB</span></div>
+            <div class="open">View case study &nearr;</div>
+          </a>
+        </div>
+      </section>
+
+      <section class="experience-block">
+        <div class="section-head">
+          <span class="num">03</span>
+          <h2>Experience</h2>
+        </div>
+
+        <div class="timeline">
+
+          <article class="role">
+            <div class="when">
+              <span class="yr">2025 &mdash; 2026</span>
+              <span>Aerodynamics Lead</span>
+              <span class="loc">Norman &middot; OK</span>
+            </div>
+            <div class="body">
+              <h3>Aerodynamics Lead</h3>
+              <div class="co">OU AIAA Design / Build / Fly &nearr;</div>
+              <p>
+                Owning the aero workflow for the team's competition aircraft
+                &mdash; from mission sizing through wind-tunnel validation
+                and flight-test debrief.
+              </p>
+              <ul class="bullets">
+                <li>Led airfoil screening and selection across XFOIL, XFLR5, and AVL trades for cruise and payload phases.</li>
+                <li>Drove wing planform &amp; stability analysis, iterating on AR, taper, and tail volume against mission scoring.</li>
+                <li>Coordinated wind-tunnel test campaigns: model fab, instrumentation, and reduction of CL/CD/CM data.</li>
+                <li>Wrote the team's aero design-review template; now used across structures and propulsion.</li>
+              </ul>
+              <div class="tags">
+                <span>XFLR5</span><span>XFOIL</span><span>AVL</span><span>SolidWorks</span><span>ANSYS Fluent</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="when">
+              <span class="yr">2024 &mdash; Now</span>
+              <span>Undergraduate Research Assistant</span>
+              <span class="loc">Norman &middot; OK</span>
+            </div>
+            <div class="body">
+              <h3>Undergraduate Research Assistant</h3>
+              <div class="co">AIROU / AIRLAB &nearr;</div>
+              <p>
+                Supporting autonomous-flight research at the seam between
+                onboard hardware and ROS2 software &mdash; the part where
+                the sim has to become a real airframe.
+              </p>
+              <ul class="bullets">
+                <li>Built and maintained ROS2 nodes for sensor integration, telemetry, and Gazebo SITL workflows.</li>
+                <li>Helped plan and execute flight tests: pre-flight checks, range ops, post-flight log analysis.</li>
+                <li>Tightened the dev loop between simulation and field test for a small UAV autonomy stack.</li>
+              </ul>
+              <div class="tags">
+                <span>ROS2</span><span>Python</span><span>PX4</span><span>OpenCV</span><span>Gazebo</span><span>MATLAB</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="when">
+              <span class="yr">2025</span>
+              <span>Aerospace Intern</span>
+              <span class="loc">Remote</span>
+            </div>
+            <div class="body">
+              <h3>Aerospace Intern</h3>
+              <div class="co">Solakair &nearr;</div>
+              <p>
+                Early-stage aerospace design support for an aircraft / UAV
+                concept &mdash; the kind of work where the geometry is still
+                moving and every CAD revision teaches you something.
+              </p>
+              <ul class="bullets">
+                <li>Contributed to CAD models, layout iteration, and design documentation.</li>
+                <li>Applied systems thinking across aerodynamic, structural, and packaging tradeoffs.</li>
+                <li>Drafted technical notes and assumptions that fed downstream analysis tasks.</li>
+              </ul>
+              <div class="tags">
+                <span>SolidWorks</span><span>Systems Engineering</span><span>CAD</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="when">
+              <span class="yr">2025 &mdash; Now</span>
+              <span>System Administrator</span>
+              <span class="loc">Norman &middot; OK</span>
+            </div>
+            <div class="body">
+              <h3>System Administrator</h3>
+              <div class="co">University of Oklahoma IT &nearr;</div>
+              <p>
+                Front-line technical support across a large university user
+                base &mdash; the operational discipline that quietly shows
+                up in every flight-test checklist I write.
+              </p>
+              <ul class="bullets">
+                <li>Triaged hardware, software, networking, and account issues for faculty, staff, and students.</li>
+                <li>Built customer-facing technical communication chops: clear writeups, calm escalation, useful runbooks.</li>
+                <li>Kept lab and classroom systems running; small fires, fast resolution.</li>
+              </ul>
+              <div class="tags">
+                <span>Ops</span><span>Networking</span><span>Support</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <div class="foot">
+        <span>~/projects.md</span>
+        <span>5 projects &middot; 4 roles</span>
+      </div>
+    </div>
+  </main>
+
+  <script src="shared/stars.js"></script>
+  <script>
+    mountStars({ density: 'soft', speed: 0.6, dim: 0.5 });
+
+    // Filter chips
+    const chips = document.querySelectorAll('.chip');
+    const projects = document.querySelectorAll('.project');
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        const tag = chip.dataset.tag;
+        projects.forEach(p => {
+          if (tag === 'all' || p.dataset.tags.includes(tag)) {
+            p.classList.remove('dimmed');
+          } else {
+            p.classList.add('dimmed');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
