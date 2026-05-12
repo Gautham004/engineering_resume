@@ -219,8 +219,39 @@
   margin-bottom: 4px;
 }
 
+/* Floating back button — appears after the inline back-link scrolls out of view */
+.back-link-float {
+  position: fixed;
+  top: 80px;
+  left: 28px;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  padding: 8px 14px;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, color 0.2s ease;
+}
+.back-link-float.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+.back-link-float:hover { color: var(--fg); }
+
 @media (max-width: 900px) {
   .proj-meta-strip { grid-template-columns: 1fr 1fr; }
   .proj-grid { grid-template-columns: 1fr; gap: 32px; }
   .proj-side { position: static; }
+  .back-link-float { display: none; }
 }

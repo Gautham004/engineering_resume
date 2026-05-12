@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="shared/project.css" />
 </head>
 <body>
+  <a class="back-link-float" href="experience.html">&larr; All Projects</a>
   <nav class="nav">
     <a class="brand" href="index.html">
       <span class="dot"></span>
@@ -167,6 +168,13 @@
   </main>
 
   <script src="shared/stars.js"></script>
+  <script>
+    const floatBtn = document.querySelector('.back-link-float');
+    const inlineLink = document.querySelector('.back-link');
+    if (floatBtn && inlineLink) {
+      new IntersectionObserver(([e]) => floatBtn.classList.toggle('visible', !e.isIntersecting)).observe(inlineLink);
+    }
+  </script>
   <script>
     mountStars({ density: 'soft', speed: 0.5, dim: 0.6 });
   </script>

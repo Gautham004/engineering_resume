@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="shared/project.css" />
 </head>
 <body>
+  <a class="back-link-float" href="experience.html">&larr; All Projects</a>
   <nav class="nav">
     <a class="brand" href="index.html">
       <span class="dot"></span>
@@ -45,103 +46,51 @@
         <div><span class="lab">Status</span><span class="val">Ongoing</span></div>
       </div>
 
-      <div class="proj-hero ph">[ HERO &middot; AUTONOMOUS DRONE &middot; 16:9 ]</div>
-
       <div class="proj-grid">
         <aside class="proj-side">
           <div>
             <h3>Tools</h3>
             <ul>
               <li>ROS2</li>
-              <li>PX4</li>
-              <li>Gazebo (SITL)</li>
-              <li>OpenCV</li>
               <li>Python</li>
               <li>MATLAB</li>
-              <li>QGroundControl</li>
+              <li>PX4</li>
+              <li>Linux</li>
             </ul>
           </div>
           <div>
             <h3>Domain</h3>
-            <p class="row">Autonomous UAV &middot; Perception &middot; Mission Planning &middot; Flight Test</p>
+            <p class="row">Autonomous UAV &middot; Flight Test Ops &middot; Telemetry Analysis &middot; Fault Isolation</p>
           </div>
           <div>
-            <h3>Deliverables</h3>
-            <p class="row">ROS2 autonomy nodes, perception pipeline, sim-to-real test workflow, flight-test plans, post-flight log-analysis notebooks.</p>
+            <h3>Lab</h3>
+            <p class="row">AIROU / AIRLAB &middot; 2024 &ndash; Present</p>
           </div>
         </aside>
 
         <article class="proj-body">
           <p class="lede">
-            Research on a small autonomous UAV - perception, mission
-            planning, and the operational workflow that gets autonomy code
-            from simulation onto a real airframe without surprises.
+            Undergraduate research supporting autonomous UAV test operations at AIROU &mdash; integrating ROS2 subsystems, writing telemetry tooling, developing test procedures, and isolating faults across hardware and software to keep the vehicle flying reliably.
           </p>
 
           <section class="proj-section">
-            <h2>Overview</h2>
-            <p>
-              The project spans the autonomy stack on a small UAV: sensor
-              integration, a perception pipeline, mission planning, and the
-              ground-test workflow that proves the pieces talk to each
-              other. The goal is a platform that other lab members can pick
-              up, fly, and extend without re-learning the entire stack.
-            </p>
-          </section>
-
-          <section class="proj-section">
-            <h2>Problem</h2>
-            <p>
-              Autonomous flight code rots fast when the gap between
-              simulation and field test is wide. Sensor drivers behave
-              differently on hardware, telemetry that is clean in SITL
-              drops packets in the air, and mission plans that look fine
-              on a desk fail in the wind. The research needed a tight
-              sim-to-real loop and a flight-test workflow that catches
-              regressions before they get to the runway.
-            </p>
-          </section>
-
-          <section class="proj-section">
-            <h2>Approach</h2>
+            <h2>What I Did</h2>
             <ul>
-              <li>Built and maintained ROS2 nodes for sensor integration, telemetry, and bag-recording.</li>
-              <li>Stood up a Gazebo / PX4 SITL workflow that mirrors the onboard topic graph, so the same code runs in sim and on the airframe.</li>
-              <li>Prototyped a perception pipeline using OpenCV for onboard image processing tasks.</li>
-              <li>Wrote pre-flight checklists and post-flight log-analysis notebooks to compare sim vs. field telemetry.</li>
-              <li>Helped plan and execute flight tests - ground checks, range ops, debrief.</li>
-            </ul>
-          </section>
-
-          <figure class="proj-figure">
-            <div class="ph">[ FIG 01 &middot; SIM-TO-REAL WORKFLOW ]</div>
-            <figcaption>Fig 01 &middot; ROS2 topic graph parity between Gazebo SITL and onboard runtime</figcaption>
-          </figure>
-
-          <section class="proj-section">
-            <h2>Contribution</h2>
-            <ul>
-              <li>Set up the ROS2 autonomy node graph and the SITL-to-onboard parity workflow.</li>
-              <li>Built and tuned the perception pipeline for the platform's onboard compute budget.</li>
-              <li>Drove flight-test ops: checklists, log capture, and post-flight analysis.</li>
-            </ul>
-          </section>
-
-          <section class="proj-section">
-            <h2>Outcome</h2>
-            <ul>
-              <li>Tightened the iteration loop between simulation and field - regressions caught earlier, fewer surprises on the runway.</li>
-              <li>Reusable telemetry &amp; log-analysis tooling that other lab members now use on their own platforms.</li>
-              <li>Operational discipline: every flight has a written checklist, a log, and a debrief before anything is flown again.</li>
+              <li>Improved autonomous system reliability by integrating ROS2 across perception, navigation, and control nodes and verifying end-to-end subsystem communication before bench and flight tests &mdash; resulting in more stable command and telemetry links during test events.</li>
+              <li>Shortened time-to-next-test by analyzing telemetry logs in Python and MATLAB, isolating root causes of anomalies, and validating corrective actions across hardware and software subsystems before returning to flight.</li>
+              <li>Improved mission scenario repeatability by building test matrices, checklists, configuration records, and procedure updates between iterations &mdash; reducing off-nominal behaviors across indoor flight runs.</li>
+              <li>Strengthened contingency response by isolating communication and power faults, documenting recovery procedures, and executing stepwise corrective actions before returning the vehicle to operation.</li>
+              <li>Supported faster post-test decisions by writing Python-based telemetry and log review scripts to organize data, validate workflows, and flag anomalies for engineering follow-up.</li>
+              <li>Reduced setup errors before flight runs by performing Linux-based system checks, launch sequencing, and telemetry validation across onboard compute, sensors, and control nodes.</li>
             </ul>
           </section>
 
           <section class="proj-section">
             <h2>What I Learned</h2>
             <ul>
-              <li>Autonomy is mostly an operations problem - the algorithms matter, but the workflow that runs them matters more.</li>
-              <li>Sim parity is worth the up-front cost; it pays back the first time it catches a regression.</li>
-              <li>Field test exposes assumptions that no amount of static analysis can find.</li>
+              <li>Autonomous flight reliability is more an operations and test discipline than a software problem &mdash; most issues surface in the workflow between iterations, not in the algorithm itself.</li>
+              <li>Good telemetry tooling pays for itself immediately: fast log review means faster root cause identification and faster return to test.</li>
+              <li>Fault isolation across a mixed hardware/software system requires documented procedures, not intuition &mdash; the recovery steps have to be repeatable by anyone on the team.</li>
             </ul>
           </section>
         </article>
@@ -155,6 +104,13 @@
   </main>
 
   <script src="shared/stars.js"></script>
+  <script>
+    const floatBtn = document.querySelector('.back-link-float');
+    const inlineLink = document.querySelector('.back-link');
+    if (floatBtn && inlineLink) {
+      new IntersectionObserver(([e]) => floatBtn.classList.toggle('visible', !e.isIntersecting)).observe(inlineLink);
+    }
+  </script>
   <script>
     mountStars({ density: 'soft', speed: 0.5, dim: 0.6 });
   </script>

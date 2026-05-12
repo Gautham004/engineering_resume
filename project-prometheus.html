@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>PROMETHEUS Mars Communications - Gautham Chandra</title>
+  <title>PROMETHEUS Mars Mission - Gautham Chandra</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="shared/project.css" />
 </head>
 <body>
+  <a class="back-link-float" href="experience.html">&larr; All Projects</a>
   <nav class="nav">
     <a class="brand" href="index.html">
       <span class="dot"></span>
@@ -30,18 +31,20 @@
       <a class="back-link" href="experience.html">&larr; All Projects</a>
 
       <header class="page-head">
-        <div class="kicker">Project / 05 &middot; Space</div>
-        <h1>PROMETHEUS &mdash; Mars Comms</h1>
+        <div class="kicker">Project / 05 &middot; Space Systems</div>
+        <h1>PROMETHEUS &mdash; Mars Mission Design</h1>
       </header>
 
       <div class="proj-meta-strip">
-        <div><span class="lab">Year</span><span class="val">2025</span></div>
-        <div><span class="lab">Context</span><span class="val">Space Systems</span></div>
-        <div><span class="lab">Subsystem</span><span class="val">Communications</span></div>
-        <div><span class="lab">Status</span><span class="val">Concept</span></div>
+        <div><span class="lab">Year</span><span class="val">2025 &ndash; 2026</span></div>
+        <div><span class="lab">Context</span><span class="val">AME 4593 &middot; Space Systems &amp; Mission Design</span></div>
+        <div><span class="lab">Role</span><span class="val">Communications Subsystem Lead</span></div>
+        <div><span class="lab">Budget</span><span class="val">$1.5B Constrained</span></div>
       </div>
 
-      <div class="proj-hero ph">[ HERO &middot; PROMETHEUS COMMS &middot; 16:9 ]</div>
+      <div class="proj-hero">
+        <img src="assets/prometheus/constellation-geometry.png" alt="Three PROMETHEUS spacecraft in equatorial Mars-synchronous orbit phased 120 degrees apart around Mars" />
+      </div>
 
       <div class="proj-grid">
         <aside class="proj-side">
@@ -49,93 +52,160 @@
             <h3>Tools</h3>
             <ul>
               <li>MATLAB</li>
-              <li>Link-budget tooling</li>
-              <li>Trade-study spreadsheets</li>
+              <li>Spiceypy / Ephemeris</li>
+              <li>Systems trade studies</li>
+              <li>Link budget analysis</li>
+              <li>Mission mode analysis</li>
             </ul>
           </div>
           <div>
             <h3>Domain</h3>
-            <p class="row">Systems Engineering &middot; Space Comms &middot; Trade Studies</p>
+            <p class="row">Astrodynamics &middot; Space Systems &middot; Mission Architecture &middot; RF Comms</p>
+          </div>
+          <div>
+            <h3>Team</h3>
+            <p class="row">5-person multidisciplinary team &mdash; astrodynamics, power, ADCS, comms, and business.</p>
           </div>
           <div>
             <h3>Deliverables</h3>
-            <p class="row">Architecture trades, link budgets across relay / DTE / ISL paths, sub-system design notes.</p>
-          </div>
-          <div>
-            <h3>Links</h3>
-            <a href="#">Concept brief &nearr;</a>
-            <a href="#">Trade-study workbook &nearr;</a>
+            <p class="row">Full mission concept report, subsystem trade studies, requirements flow-down, cost estimate.</p>
           </div>
         </aside>
 
         <article class="proj-body">
           <p class="lede">
-            A communications subsystem concept for a Mars orbital
-            reflective constellation - relay, direct-to-Earth, and
-            inter-satellite link trade studies, with link budgets to back
-            them up.
+            A full systems engineering concept for an orbital solar augmentation mission at Mars &mdash; three spacecraft in Mars-synchronous orbit, each deploying a 200-meter reflector to redirect sunlight to the Martian surface, designed within a hard $1.5 billion budget constraint.
           </p>
 
           <section class="proj-section">
-            <h2>Overview</h2>
+            <h2>The Problem with Power on Mars</h2>
             <p>
-              PROMETHEUS is a concept Mars orbital constellation. My slice
-              was the comms subsystem - what links you carry, when you
-              relay, how they close, and what that costs in mass, power,
-              and complexity.
+              At 1.52 AU, Mars receives only ~43% of Earth&rsquo;s solar flux &mdash; roughly 590 W/m&sup2; at the top of the atmosphere, reduced further by dust, atmospheric scattering, and seasonal variation. During regional dust storms, surface solar flux can drop by more than 50%. This low and unpredictable energy environment has ended real missions: dust accumulation on solar arrays was a primary factor in the loss of the Opportunity rover.
+            </p>
+            <p>
+              Surface power systems respond to this by over-sizing arrays, adding battery storage, and designing conservatively around worst-case conditions. PROMETHEUS reframes the problem: instead of fighting the energy environment from the surface, shift energy control to orbit. Reflective spacecraft intercept solar radiation and redirect it to target regions with controlled timing, turning an uncontrollable passive resource into a managed system input.
             </p>
           </section>
 
           <section class="proj-section">
-            <h2>Problem</h2>
+            <h2>Mission Concept</h2>
             <p>
-              Mars comms is constrained by geometry, range, and limited
-              ground-station availability. A constellation has to make
-              tradeoffs between direct-to-Earth (DTE) bursts, relay through
-              existing Mars-orbit assets, and inter-satellite links (ISL)
-              within the constellation itself.
+              The PROMETHEUS constellation consists of three to four identical spacecraft in Mars-synchronous orbit &mdash; a circular equatorial orbit whose period matches Mars&rsquo; sidereal rotation of ~24.6 hours. Each spacecraft carries a deployable thin-film reflector approximately 200 meters in diameter (~31,400 m&sup2; effective area), made from aluminized Kapton chosen for its mass efficiency, reflectivity, and material heritage.
+            </p>
+            <p>
+              The reflectors redirect solar radiation to target regions near Elysium Planitia, raising local surface irradiance from ~590 W/m&sup2; to ~800 W/m&sup2; &mdash; a net augmentation of +210 W/m&sup2;. Energy is distributed across a broad footprint rather than concentrated, maintaining thermally safe flux levels while meaningfully improving photovoltaic output, thermal stability, and the energy available for in-situ resource utilization (ISRU).
             </p>
           </section>
 
           <section class="proj-section">
-            <h2>Approach</h2>
-            <ul>
-              <li>Built link budgets in MATLAB for DTE, relay, and ISL paths at representative geometries.</li>
-              <li>Set up a trade-study matrix scoring architectures on data return, latency, mass, and power.</li>
-              <li>Captured assumptions explicitly so the trade can be re-run when downstream subsystems update their numbers.</li>
-              <li>Wrote a short design brief that other subsystem leads could read in one sitting.</li>
-            </ul>
+            <h2>Orbital Design</h2>
+            <p>
+              Mars-synchronous orbit is the mission&rsquo;s fundamental enabling choice. At the synchronous altitude of ~17,032 km, the spacecraft&rsquo;s orbital period equals Mars&rsquo; rotation period, maintaining a fixed longitudinal ground track over the target region without continuous retargeting. This dramatically reduces attitude control complexity and enables stable, long-duration illumination.
+            </p>
+            <p>
+              The three spacecraft are phased 60&deg; apart in the same equatorial plane. One spacecraft is directly above the target (elevation angle E = 90&deg;); the two offset spacecraft maintain E = 21.07&deg;, keeping all three well above the horizon at all times for uninterrupted surface visibility. This phasing also staggers eclipse events across the constellation, ensuring at least one spacecraft remains illuminated at all times.
+            </p>
+            <p>
+              Mars&rsquo; non-spherical gravity field and solar radiation pressure (amplified by the large reflector area-to-mass ratio) create significant perturbative forces. Without active station-keeping, the semi-major axis drifts, accumulating into longitude error at the surface. Station-keeping &Delta;v requirements were estimated at 10&ndash;70 m/s per spacecraft per year, managed through ionic thrusters selected for their high specific impulse over the multi-year mission lifetime.
+            </p>
           </section>
 
           <figure class="proj-figure">
-            <div class="ph">[ FIG 01 &middot; LINK BUDGET TRADES ]</div>
-            <figcaption>Fig 01 &middot; Link-budget tradespace across DTE / relay / ISL</figcaption>
+            <div class="img-wrap">
+              <img src="assets/prometheus/constellation-geometry.png" alt="3D visualization of three PROMETHEUS spacecraft in equatorial Mars-synchronous orbit phased 60 degrees apart around Mars" />
+            </div>
+            <figcaption>Fig 01 &middot; Mars-synchronous constellation geometry &mdash; three spacecraft phased 60&deg; apart in equatorial orbit at ~17,032 km altitude, maintaining fixed longitudinal alignment with Elysium Planitia.</figcaption>
+          </figure>
+
+          <section class="proj-section">
+            <h2>Trajectory &amp; Transfer</h2>
+            <p>
+              Earth&ndash;Mars launch opportunities occur approximately every 780 days when planetary geometry allows minimum-energy transfers. The team used a porkchop plot &mdash; a contour map of required &Delta;v over a range of departure and arrival dates &mdash; to identify the optimal transfer window. Earth and Mars ephemeris data from the Spiceypy Python library were used to generate the plot.
+            </p>
+            <p>
+              The selected trajectory follows a near-Hohmann path: departure December 2030, Mars arrival October 2031, with a time of flight of 283 days and a total &Delta;v of ~6.5 km/s. After arrival, the spacecraft performs a Mars orbit insertion burn to achieve initial capture, followed by a series of orbit-raising maneuvers to reach the Mars-synchronous altitude &mdash; one of the highest &Delta;v events of the mission.
+            </p>
+          </section>
+
+          <figure class="proj-figure">
+            <div class="img-wrap">
+              <img src="assets/prometheus/porkchop-plot.png" alt="Earth-Mars transfer porkchop plot showing delta-v contours as a heatmap across departure dates on the x-axis and arrival dates on the y-axis, with the low delta-v Hohmann corridor highlighted" />
+            </div>
+            <figcaption>Fig 02 &middot; Earth&ndash;Mars transfer porkchop plot &mdash; &Delta;v contours over departure and arrival date space. Selected trajectory (marked): depart 2030-12-23, arrive 2031-10-02, ToF 283 days, total &Delta;v ~6.5 km/s.</figcaption>
+          </figure>
+
+          <section class="proj-section">
+            <h2>Eclipse &amp; Coverage Analysis</h2>
+            <p>
+              At Mars-synchronous altitude, eclipse durations depend on orbital geometry relative to the Sun. The team computed eclipse timelines for a simulated mission window (April 2032 &ndash; July 2032), confirming that penumbra and umbra events are staggered across the three spacecraft and do not overlap. No period exists during the analyzed window where all three spacecraft are simultaneously in umbra, meaning the surface target is never without illumination coverage.
+            </p>
+            <p>
+              Eclipse events drive battery sizing on each spacecraft: the critical eclipse load (avionics + ADCS + thermal heaters, ~330 W) determines the minimum battery capacity, independent of mission power generation requirements. Eclipse analysis was therefore a direct input to the power subsystem sizing.
+            </p>
+          </section>
+
+          <figure class="proj-figure">
+            <div class="img-wrap">
+              <img src="assets/prometheus/eclipse-timeline.png" alt="Eclipse timeline chart showing staggered penumbra and umbra events for three PROMETHEUS spacecraft across April to July 2032, with no simultaneous full eclipse overlap" />
+            </div>
+            <figcaption>Fig 03 &middot; Eclipse timeline &mdash; staggered penumbra and umbra events across the constellation confirm at least one spacecraft remains illuminated throughout the analyzed coverage window.</figcaption>
+          </figure>
+
+          <section class="proj-section">
+            <h2>My Contribution &mdash; Communications</h2>
+            <p>
+              I owned the communications subsystem, which had to solve a harder problem than raw link performance: how do you operate a constellation autonomously when every command takes 4&ndash;24 minutes to arrive and the Deep Space Network is a shared, scheduled resource?
+            </p>
+            <p>
+              I evaluated four architectures (DTE-only, relay-only, hybrid, and hybrid + RF ISL) against availability, fault resiliency, DSN efficiency, and power cost. The selected architecture uses RF inter-satellite crosslinks so non-gateway spacecraft forward data to one active gateway, which performs the scheduled high-rate DSN downlink. Every spacecraft keeps an independent low-rate emergency beacon for safe-mode recovery. Onboard store-and-forward (DTN) buffers up to 7 days of data to survive missed contacts and solar conjunction blackouts.
+            </p>
+          </section>
+
+          <figure class="proj-figure">
+            <div class="img-wrap">
+              <img src="assets/prometheus/comms-flowdown.png" alt="Communications subsystem requirements flow-down diagram from link architecture through RF hardware, onboard DTN networking, ground segment, and fault management" />
+            </div>
+            <figcaption>Fig 04 &middot; Communications subsystem flow-down &mdash; from link architecture selection through RF hardware sizing, onboard DTN store-and-forward, ground segment interfaces, and autonomous fault management.</figcaption>
           </figure>
 
           <section class="proj-section">
             <h2>Outcome</h2>
             <ul>
-              <li>A defensible architecture recommendation, with link budgets and assumptions visible in one place.</li>
-              <li>Cleaner shared language across subsystems thanks to the trade matrix.</li>
-              <li>A lot of practice doing systems-engineering work where the right answer depends on what your team values most.</li>
+              <li>Produced a full mission concept report covering trajectory design, orbital mechanics, constellation geometry, subsystem architecture, and a $1.05&ndash;$1.21B cost estimate against the $1.5B constraint.</li>
+              <li>Confirmed that a 3-spacecraft Mars-synchronous constellation at 17,032 km provides near-continuous surface coverage with staggered eclipse events and 10&ndash;70 m/s/yr station-keeping margins.</li>
+              <li>Selected a near-Hohmann 2030&ndash;2031 transfer window via porkchop analysis, closing the trajectory with a total &Delta;v of ~6.5 km/s.</li>
+              <li>Designed the communications subsystem architecture, requirements flow-down, and autonomous operations concept for a constellation operating under 4&ndash;24 minute one-way light-time delays.</li>
+            </ul>
+          </section>
+
+          <section class="proj-section">
+            <h2>What I Learned</h2>
+            <ul>
+              <li>Orbital design is never just an astrodynamics problem &mdash; the choice of Mars-synchronous orbit directly shaped every other subsystem&rsquo;s requirements, from pointing accuracy to station-keeping &Delta;v to eclipse battery sizing.</li>
+              <li>Constraint-driven design sharpens decisions. The $1.5B ceiling forced real trade-offs between constellation size, reflector scale, and subsystem complexity that wouldn&rsquo;t have existed in an unconstrained exercise.</li>
+              <li>Perturbative forces at Mars (non-spherical gravity + solar radiation pressure on a 200 m reflector) are large enough to dominate station-keeping design &mdash; the reflector and the orbit are coupled systems, not independent ones.</li>
+              <li>Multi-disciplinary integration is where concept missions succeed or fail. Power, ADCS, comms, and the reflector payload all feed into each other, and tracking those dependencies across a team is as much an engineering challenge as any individual subsystem.</li>
             </ul>
           </section>
         </article>
       </div>
 
       <div class="proj-nav">
-        <a href="project-drone-builds.html"><span class="dir">Prev</span>&larr; Drone Builds</a>
-        <a href="experience.html"><span class="dir">All</span>Projects index &nearr;</a>
+        <a href="experience.html"><span class="dir">All</span>&larr; Projects index</a>
+        <a href="project-autonomous-drone.html"><span class="dir">Next</span>Autonomous Drone &nearr;</a>
       </div>
 
-      <div class="foot">
-        <span>~/projects/prometheus.md</span>
-        <span>05.06.2026</span>
-      </div>
     </div>
   </main>
 
   <script src="shared/stars.js"></script>
+  <script>
+    const floatBtn = document.querySelector('.back-link-float');
+    const inlineLink = document.querySelector('.back-link');
+    if (floatBtn && inlineLink) {
+      new IntersectionObserver(([e]) => floatBtn.classList.toggle('visible', !e.isIntersecting)).observe(inlineLink);
+    }
+  </script>
   <script>
     mountStars({ density: 'soft', speed: 0.5, dim: 0.6 });
   </script>

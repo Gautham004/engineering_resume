@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Solakair Internship - Gautham Chandra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Aerospace Engineering Intern at Solakair - hardware integration, systems checkout, interface control documentation, and bench test operations." />
+  <meta property="og:title" content="Solakair Internship - Gautham Chandra" />
+  <meta property="og:description" content="Aerospace Engineering Internship at Solakair: hardware bring-up, electrical subsystem checkout, CAD configuration control, and integration test procedures." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared/site.css" />
+  <link rel="stylesheet" href="shared/project.css" />
+</head>
+<body>
+  <a class="back-link-float" href="experience.html">&larr; All Projects</a>
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <span class="dot"></span>
+      <span>G &middot; CHANDRA</span>
+    </a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="active" href="experience.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <div class="page-inner">
+      <a class="back-link" href="experience.html">&larr; All Projects</a>
+
+      <header class="page-head">
+        <div class="kicker">Project / 07 &middot; Industry</div>
+        <h1>Solakair</h1>
+      </header>
+
+      <div class="proj-meta-strip">
+        <div><span class="lab">Year</span><span class="val">Feb &ndash; May 2026</span></div>
+        <div><span class="lab">Role</span><span class="val">Aerospace Engineering Intern</span></div>
+        <div><span class="lab">Company</span><span class="val">Solakair</span></div>
+        <div><span class="lab">Status</span><span class="val">Completed</span></div>
+      </div>
+
+      <div class="proj-grid">
+        <aside class="proj-side">
+          <div>
+            <h3>Tools</h3>
+            <ul>
+              <li>SolidWorks</li>
+              <li>Systems Engineering</li>
+              <li>Hardware Integration</li>
+              <li>ICD Documentation</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Domain</h3>
+            <p class="row">Aerospace Systems &middot; Hardware Integration &middot; Interface Control &middot; Test Operations</p>
+          </div>
+          <div>
+            <h3>Company</h3>
+            <p class="row">Solakair &middot; Feb &ndash; May 2026</p>
+          </div>
+        </aside>
+
+        <article class="proj-body">
+          <p class="lede">
+            Aerospace engineering internship at Solakair, working across hardware integration, electrical subsystem checkout, and interface control documentation to support bring-up and verification of integrated systems.
+          </p>
+
+          <section class="proj-section">
+            <h2>What I Did</h2>
+            <ul>
+              <li>Accelerated hardware bring-up and verification by performing pinout verification, continuity checks, and procedural checkout across integrated electrical subsystems &mdash; reducing bench test cycle time through structured pre-test discipline.</li>
+              <li>Improved interface handoff across teams by maintaining configuration-controlled CAD and interface updates, documenting as-built vs. as-designed deltas, and supporting interface control documentation for design and manufacturing &mdash; reducing repeated integration issues at handoff boundaries.</li>
+              <li>Strengthened requirements verification during integration by executing structured checkout procedures, tracking discrepancies, and applying contingency-oriented troubleshooting for off-nominal bench behavior &mdash; enabling faster pre-test readiness across integration milestones.</li>
+            </ul>
+          </section>
+
+          <section class="proj-section">
+            <h2>What I Learned</h2>
+            <ul>
+              <li>Hardware integration discipline starts before the hardware arrives &mdash; clear interface documentation and configuration control prevent the issues that show up as bench test failures.</li>
+              <li>As-built vs. as-designed delta tracking is not overhead, it is the mechanism by which integration teams catch deviations before they become system-level problems.</li>
+              <li>Structured checkout procedures make off-nominal behavior tractable &mdash; when something fails, a documented baseline is what lets you isolate the fault rather than guess at it.</li>
+            </ul>
+          </section>
+        </article>
+      </div>
+
+      <div class="proj-nav">
+        <a href="project-autonomous-drone.html"><span class="dir">Prev</span>&larr; Autonomous Drone</a>
+        <a href="experience.html"><span class="dir">All</span>Projects index &nearr;</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="shared/stars.js"></script>
+  <script>
+    const floatBtn = document.querySelector('.back-link-float');
+    const inlineLink = document.querySelector('.back-link');
+    if (floatBtn && inlineLink) {
+      new IntersectionObserver(([e]) => floatBtn.classList.toggle('visible', !e.isIntersecting)).observe(inlineLink);
+    }
+  </script>
+  <script>
+    mountStars({ density: 'soft', speed: 0.5, dim: 0.6 });
+  </script>
+</body>
+</html>

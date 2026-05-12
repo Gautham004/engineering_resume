@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="shared/project.css" />
 </head>
 <body>
+  <a class="back-link-float" href="experience.html">&larr; All Projects</a>
   <nav class="nav">
     <a class="brand" href="index.html">
       <span class="dot"></span>
@@ -39,109 +40,52 @@
       </header>
 
       <div class="proj-meta-strip">
-        <div><span class="lab">Year</span><span class="val">2024 - Now</span></div>
+        <div><span class="lab">Year</span><span class="val">June &ndash; Aug 2024</span></div>
         <div><span class="lab">Role</span><span class="val">Research Assistant</span></div>
-        <div><span class="lab">Lab</span><span class="val">AIROU / AIRLAB</span></div>
-        <div><span class="lab">Status</span><span class="val">Ongoing</span></div>
+        <div><span class="lab">Supervisor</span><span class="val">Dr. Wei Sun</span></div>
+        <div><span class="lab">Status</span><span class="val">Completed</span></div>
       </div>
-
-      <div class="proj-hero ph">[ HERO &middot; TILT-ROTOR UAV &middot; 16:9 ]</div>
 
       <div class="proj-grid">
         <aside class="proj-side">
           <div>
             <h3>Tools</h3>
             <ul>
-              <li>SolidWorks</li>
-              <li>MATLAB / Simulink</li>
-              <li>XFLR5 / AVL</li>
               <li>ROS2</li>
-              <li>PX4</li>
-              <li>Gazebo (SITL)</li>
+              <li>Pixhawk</li>
+              <li>Mission Planner</li>
             </ul>
           </div>
           <div>
             <h3>Domain</h3>
-            <p class="row">VTOL Aircraft &middot; Transition Flight &middot; Controls &middot; Mechanism Design</p>
+            <p class="row">Autonomous Flight &middot; UAV Systems &middot; Flight Control Integration</p>
           </div>
           <div>
-            <h3>Deliverables</h3>
-            <p class="row">Tilt-mechanism CAD, propulsion sizing trades, transition-flight simulations, control-law prototypes, bench-test plans.</p>
+            <h3>Supervisor</h3>
+            <p class="row">Dr. Wei Sun</p>
           </div>
         </aside>
 
         <article class="proj-body">
           <p class="lede">
-            Research on a tilt-rotor UAV - a VTOL platform that hovers like
-            a multirotor and cruises like a fixed-wing - focused on the
-            transition regime where most of the hard control and propulsion
-            problems live.
+            Summer research position developing autonomous flight capabilities for a tilt-rotor UAV &mdash; integrating ROS2 with a Pixhawk flight controller and using Mission Planner for flight planning, monitoring, and data analysis.
           </p>
 
           <section class="proj-section">
-            <h2>Overview</h2>
-            <p>
-              Tilt-rotor aircraft promise vertical takeoff with efficient
-              cruise, but pay for it in mechanism complexity and a
-              controls-heavy transition phase. The research scope covers
-              propulsion sizing across hover and cruise, the tilt mechanism
-              itself, and the control logic that has to hand off authority
-              between rotor thrust and wing lift.
-            </p>
-          </section>
-
-          <section class="proj-section">
-            <h2>Problem</h2>
-            <p>
-              Transition flight is where tilt-rotor UAVs are hardest to
-              certify and tune: thrust requirements drop as the wing starts
-              producing lift, the propellers move through unsteady
-              aerodynamic regimes, and the autopilot has to schedule gains
-              across a quickly-changing plant. The challenge is making a
-              transition profile that is smooth, repeatable, and safe to
-              fly in simulation before any hardware risk is accepted.
-            </p>
-          </section>
-
-          <section class="proj-section">
-            <h2>Approach</h2>
+            <h2>What I Did</h2>
             <ul>
-              <li>Sized propulsion across hover, transition, and cruise design points; checked disk loading, thrust margin, and battery energy budget.</li>
-              <li>Built a CAD model of the tilt mechanism focused on stiffness, servo torque, and reliability under cyclic loading.</li>
-              <li>Modeled the airframe in Simulink with a quasi-steady aero model that captures lift transfer from rotors to wing during transition.</li>
-              <li>Prototyped transition control logic and stress-tested it in Gazebo / PX4 SITL before any hardware testing.</li>
-            </ul>
-          </section>
-
-          <figure class="proj-figure">
-            <div class="ph">[ FIG 01 &middot; TRANSITION ENVELOPE ]</div>
-            <figcaption>Fig 01 &middot; Tilt angle vs. airspeed across the transition envelope</figcaption>
-          </figure>
-
-          <section class="proj-section">
-            <h2>Contribution</h2>
-            <ul>
-              <li>Owned the propulsion sizing trade and the resulting design-point hover / cruise targets.</li>
-              <li>Built the CAD and analysis loop for the tilt mechanism, including a servo-torque margin check.</li>
-              <li>Set up the Simulink transition-flight model used to prototype the control schedule.</li>
-            </ul>
-          </section>
-
-          <section class="proj-section">
-            <h2>Outcome</h2>
-            <ul>
-              <li>A defensible propulsion sizing across hover, transition, and cruise that closes the energy budget for the target mission.</li>
-              <li>A simulation-validated transition profile that smoothly hands off between rotor and wing authority.</li>
-              <li>Bench-test plan and hardware risk list ready for the next phase of the program.</li>
+              <li>Developed autonomous flight capabilities using ROS2, enabling precise control and navigation of the UAV platform.</li>
+              <li>Configured a Pixhawk flight controller and integrated it with the RC system for reliable hardware-software communication.</li>
+              <li>Used Mission Planner for flight planning, performance monitoring, and post-flight data analysis to improve flight reliability.</li>
             </ul>
           </section>
 
           <section class="proj-section">
             <h2>What I Learned</h2>
             <ul>
-              <li>VTOL transition is a controls problem dressed as an aero problem - the schedule matters more than peak performance.</li>
-              <li>Mechanism design carries more risk than people expect; small geometry choices show up later as servo wear or vibration.</li>
-              <li>Sim-in-the-loop is the only honest way to evaluate transition logic before you commit to flight test.</li>
+              <li>ROS2 as a robotics middleware &mdash; how nodes, topics, and the communication layer map onto real hardware in a flight context.</li>
+              <li>Pixhawk configuration and the gap between software autonomy and physical flight controller integration.</li>
+              <li>How to use Mission Planner as an operational tool, not just for setup &mdash; reading telemetry, diagnosing flight behavior, and iterating on reliability.</li>
             </ul>
           </section>
         </article>
@@ -155,6 +99,13 @@
   </main>
 
   <script src="shared/stars.js"></script>
+  <script>
+    const floatBtn = document.querySelector('.back-link-float');
+    const inlineLink = document.querySelector('.back-link');
+    if (floatBtn && inlineLink) {
+      new IntersectionObserver(([e]) => floatBtn.classList.toggle('visible', !e.isIntersecting)).observe(inlineLink);
+    }
+  </script>
   <script>
     mountStars({ density: 'soft', speed: 0.5, dim: 0.6 });
   </script>

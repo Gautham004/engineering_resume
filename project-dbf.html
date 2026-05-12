@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="shared/project.css" />
 </head>
 <body>
+  <a class="back-link-float" href="experience.html">&larr; All Projects</a>
   <nav class="nav">
     <a class="brand" href="index.html">
       <span class="dot"></span>
@@ -38,7 +39,7 @@
         <div><span class="lab">Year</span><span class="val">2023 - 2026</span></div>
         <div><span class="lab">Role</span><span class="val">Aerodynamics Lead</span></div>
         <div><span class="lab">Team</span><span class="val">OU AIAA DBF</span></div>
-        <div><span class="lab">Status</span><span class="val">Completed / 2026 Season</span></div>      </div>
+      </div>
 
       <div class="proj-hero">
         <img src="assets/dbf/plane_model.jpg" alt="OU DBF competition aircraft in flight - red and white airframe with shark-mouth nose art against blue sky" />
@@ -108,13 +109,6 @@ The DBF aircraft had to balance payload capacity, low-speed handling, and cruise
 
           <figure class="proj-figure">
             <div class="img-wrap">
-              <img src="assets/dbf/airfoil-polars.jpg" alt="CL vs alpha comparison of four candidate airfoils - GOE 502, GOE 177, Eppler 398, Eppler 351" />
-            </div>
-            <figcaption>Fig 01 &middot; CL vs alpha for four shortlisted airfoils during the screening pass</figcaption>
-          </figure>
-
-          <figure class="proj-figure">
-            <div class="img-wrap">
               <img src="assets/dbf/cfd.jpg" alt="ANSYS Fluent CFD velocity streamlines over the DBF wing, colored by velocity magnitude from 0.3 to 126 m/s" />
             </div>
             <figcaption>Fig 02 &middot; ANSYS Fluent velocity streamlines over the wing at the cruise design point</figcaption>
@@ -175,6 +169,13 @@ The DBF aircraft had to balance payload capacity, low-speed handling, and cruise
   </main>
 
   <script src="shared/stars.js"></script>
+  <script>
+    const floatBtn = document.querySelector('.back-link-float');
+    const inlineLink = document.querySelector('.back-link');
+    if (floatBtn && inlineLink) {
+      new IntersectionObserver(([e]) => floatBtn.classList.toggle('visible', !e.isIntersecting)).observe(inlineLink);
+    }
+  </script>
   <script>
     mountStars({ density: 'soft', speed: 0.5, dim: 0.6 });
   </script>

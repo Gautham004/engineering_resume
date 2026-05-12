@@ -207,19 +207,19 @@
           </p>
 
           <div class="channels">
-            <a class="channel" href="mailto:gautham@example.com">
+            <a class="channel" href="mailto:chandra.gautham@gmail.com">
               <span class="lab">Email</span>
-              <span class="val">gautham@example.com</span>
+              <span class="val">chandra.gautham@gmail.com</span>
               <span class="arr">&nearr;</span>
             </a>
-            <a class="channel" href="https://github.com/gauthamchandra" target="_blank" rel="noopener">
+            <a class="channel" href="https://github.com/Gautham004" target="_blank" rel="noopener">
               <span class="lab">GitHub</span>
-              <span class="val">github.com/gauthamchandra</span>
+              <span class="val">github.com/Gautham004</span>
               <span class="arr">&nearr;</span>
             </a>
-            <a class="channel" href="https://linkedin.com/in/gauthamchandra" target="_blank" rel="noopener">
+            <a class="channel" href="https://www.linkedin.com/in/gautham-chandra/" target="_blank" rel="noopener">
               <span class="lab">LinkedIn</span>
-              <span class="val">linkedin.com/in/gauthamchandra</span>
+              <span class="val">linkedin.com/in/gautham-chandra</span>
               <span class="arr">&nearr;</span>
             </a>
             <a class="channel" href="resume.html">
@@ -300,24 +300,42 @@
     tick();
     setInterval(tick, 30000);
 
-    // Form submit — fake but real-feeling
+    // Form submit — Formspree
+    // Setup: go to formspree.io, create a free form, paste your endpoint below
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpqbnzkg';
+
     const form = document.getElementById('form');
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const data = Object.fromEntries(new FormData(form).entries());
       if (!data.name || !data.email || !data.msg) return;
       const btn = form.querySelector('button[type=submit]');
       btn.disabled = true;
       btn.textContent = 'Transmitting…';
-      setTimeout(() => {
-        form.innerHTML = `
-          <div class="sent">
-            <div class="check">&check;</div>
-            <h3>Transmitted</h3>
-            <p>Reply within ~48h. Thanks, ${data.name.split(' ')[0]}.</p>
-          </div>
-        `;
-      }, 900);
+      try {
+        const res = await fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+        if (res.ok) {
+          form.innerHTML = `
+            <div class="sent">
+              <div class="check">&check;</div>
+              <h3>Transmitted</h3>
+              <p>Reply within ~48h. Thanks, ${data.name.split(' ')[0]}.</p>
+            </div>
+          `;
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Transmit';
+          alert('Something went wrong — please email me directly.');
+        }
+      } catch {
+        btn.disabled = false;
+        btn.textContent = 'Transmit';
+        alert('Network error — please email me directly.');
+      }
     });
   </script>
 </body>
