@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Autonomous Drone Research - Gautham Chandra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Autonomous drone research at AIROU - perception, mission planning, autonomy stack development, and flight test." />
+  <meta property="og:title" content="Autonomous Drone Research - Gautham Chandra" />
+  <meta property="og:description" content="Undergraduate research on autonomous UAVs: ROS2 stack, perception pipelines, mission planning, sim-to-real workflow, and field flight test." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared/site.css" />
+  <link rel="stylesheet" href="shared/project.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <span class="dot"></span>
+      <span>G &middot; CHANDRA</span>
+    </a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="active" href="experience.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <div class="page-inner">
+      <a class="back-link" href="experience.html">&larr; All Projects</a>
+
+      <header class="page-head">
+        <div class="kicker">Project / 05 &middot; Research</div>
+        <h1>Autonomous Drone</h1>
+      </header>
+
+      <div class="proj-meta-strip">
+        <div><span class="lab">Year</span><span class="val">2024 - Now</span></div>
+        <div><span class="lab">Role</span><span class="val">Research Assistant</span></div>
+        <div><span class="lab">Lab</span><span class="val">AIROU / AIRLAB</span></div>
+        <div><span class="lab">Status</span><span class="val">Ongoing</span></div>
+      </div>
+
+      <div class="proj-hero ph">[ HERO &middot; AUTONOMOUS DRONE &middot; 16:9 ]</div>
+
+      <div class="proj-grid">
+        <aside class="proj-side">
+          <div>
+            <h3>Tools</h3>
+            <ul>
+              <li>ROS2</li>
+              <li>PX4</li>
+              <li>Gazebo (SITL)</li>
+              <li>OpenCV</li>
+              <li>Python</li>
+              <li>MATLAB</li>
+              <li>QGroundControl</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Domain</h3>
+            <p class="row">Autonomous UAV &middot; Perception &middot; Mission Planning &middot; Flight Test</p>
+          </div>
+          <div>
+            <h3>Deliverables</h3>
+            <p class="row">ROS2 autonomy nodes, perception pipeline, sim-to-real test workflow, flight-test plans, post-flight log-analysis notebooks.</p>
+          </div>
+        </aside>
+
+        <article class="proj-body">
+          <p class="lede">
+            Research on a small autonomous UAV - perception, mission
+            planning, and the operational workflow that gets autonomy code
+            from simulation onto a real airframe without surprises.
+          </p>
+
+          <section class="proj-section">
+            <h2>Overview</h2>
+            <p>
+              The project spans the autonomy stack on a small UAV: sensor
+              integration, a perception pipeline, mission planning, and the
+              ground-test workflow that proves the pieces talk to each
+              other. The goal is a platform that other lab members can pick
+              up, fly, and extend without re-learning the entire stack.
+            </p>
+          </section>
+
+          <section class="proj-section">
+            <h2>Problem</h2>
+            <p>
+              Autonomous flight code rots fast when the gap between
+              simulation and field test is wide. Sensor drivers behave
+              differently on hardware, telemetry that is clean in SITL
+              drops packets in the air, and mission plans that look fine
+              on a desk fail in the wind. The research needed a tight
+              sim-to-real loop and a flight-test workflow that catches
+              regressions before they get to the runway.
+            </p>
+          </section>
+
+          <section class="proj-section">
+            <h2>Approach</h2>
+            <ul>
+              <li>Built and maintained ROS2 nodes for sensor integration, telemetry, and bag-recording.</li>
+              <li>Stood up a Gazebo / PX4 SITL workflow that mirrors the onboard topic graph, so the same code runs in sim and on the airframe.</li>
+              <li>Prototyped a perception pipeline using OpenCV for onboard image processing tasks.</li>
+              <li>Wrote pre-flight checklists and post-flight log-analysis notebooks to compare sim vs. field telemetry.</li>
+              <li>Helped plan and execute flight tests - ground checks, range ops, debrief.</li>
+            </ul>
+          </section>
+
+          <figure class="proj-figure">
+            <div class="ph">[ FIG 01 &middot; SIM-TO-REAL WORKFLOW ]</div>
+            <figcaption>Fig 01 &middot; ROS2 topic graph parity between Gazebo SITL and onboard runtime</figcaption>
+          </figure>
+
+          <section class="proj-section">
+            <h2>Contribution</h2>
+            <ul>
+              <li>Set up the ROS2 autonomy node graph and the SITL-to-onboard parity workflow.</li>
+              <li>Built and tuned the perception pipeline for the platform's onboard compute budget.</li>
+              <li>Drove flight-test ops: checklists, log capture, and post-flight analysis.</li>
+            </ul>
+          </section>
+
+          <section class="proj-section">
+            <h2>Outcome</h2>
+            <ul>
+              <li>Tightened the iteration loop between simulation and field - regressions caught earlier, fewer surprises on the runway.</li>
+              <li>Reusable telemetry &amp; log-analysis tooling that other lab members now use on their own platforms.</li>
+              <li>Operational discipline: every flight has a written checklist, a log, and a debrief before anything is flown again.</li>
+            </ul>
+          </section>
+
+          <section class="proj-section">
+            <h2>What I Learned</h2>
+            <ul>
+              <li>Autonomy is mostly an operations problem - the algorithms matter, but the workflow that runs them matters more.</li>
+              <li>Sim parity is worth the up-front cost; it pays back the first time it catches a regression.</li>
+              <li>Field test exposes assumptions that no amount of static analysis can find.</li>
+            </ul>
+          </section>
+        </article>
+      </div>
+
+      <div class="proj-nav">
+        <a href="project-tilt-rotor.html"><span class="dir">Prev</span>&larr; Tilt-Rotor UAV</a>
+        <a href="experience.html"><span class="dir">All</span>Projects index &nearr;</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="shared/stars.js"></script>
+  <script>
+    mountStars({ density: 'soft', speed: 0.5, dim: 0.6 });
+  </script>
+</body>
+</html>

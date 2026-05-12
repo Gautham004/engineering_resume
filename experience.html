@@ -61,6 +61,13 @@
     .project:hover { border-color: var(--rule-strong); transform: translateY(-2px); }
     .project.dimmed { opacity: 0.2; filter: grayscale(1); pointer-events: none; }
     .project .ph { aspect-ratio: 16/9; }
+    .project .project-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      border: 1px solid var(--rule);
+    }
     .project .meta {
       display: flex; justify-content: space-between; align-items: center;
       font-family: var(--mono);
@@ -223,51 +230,50 @@
         <button class="chip active" data-tag="all">All</button>
         <button class="chip" data-tag="aircraft">Aircraft</button>
         <button class="chip" data-tag="uav">UAV</button>
-        <button class="chip" data-tag="cfd">CFD / Aero</button>
+        <button class="chip" data-tag="research">Research</button>
         <button class="chip" data-tag="hardware">Hardware</button>
-        <button class="chip" data-tag="space">Space</button>
       </div>
 
       <section>
         <div class="project-grid">
-          <a class="project" data-tags="aircraft cfd" href="project-dbf.html">
-            <div class="ph">[ DBF &middot; AIRCRAFT ]</div>
-            <div class="meta"><span>2025 &middot; AIAA DBF</span><span>Aircraft</span></div>
-            <h4>DBF Aircraft Design</h4>
-            <p>Designed and analyzed a fixed-wing competition aircraft - airfoil selection, stability sizing, and manufacturable wing geometry.</p>
+          <a class="project" data-tags="aircraft" href="project-dbf.html">
+            <img class="project-thumb" src="assets/dbf/plane_model.jpg" alt="OU DBF competition aircraft in flight" />
+            <div class="meta"><span>2023 - 2026 &middot; OU AIAA</span><span>Aircraft</span></div>
+            <h4>OU Design Build Fly</h4>
+            <p>Aerodynamics workflow for OU AIAA DBF - airfoil selection, planform design, CFD validation, wind-tunnel testing, and flight-test debriefs across multiple competition seasons.</p>
             <div class="stack"><span>XFLR5</span><span>XFOIL</span><span>AVL</span><span>SolidWorks</span><span>ANSYS Fluent</span></div>
             <div class="open">View case study &nearr;</div>
           </a>
-          <a class="project" data-tags="uav" href="project-uav-autonomy.html">
-            <div class="ph">[ UAV &middot; AUTONOMY ]</div>
-            <div class="meta"><span>2024 &middot; AIROU</span><span>UAV</span></div>
-            <h4>UAV Autonomy - AIROU</h4>
-            <p>Autonomous UAV research stack: ROS2 nodes, sensor integration, Gazebo simulation, and field-test workflows.</p>
-            <div class="stack"><span>ROS2</span><span>Python</span><span>PX4</span><span>OpenCV</span><span>Gazebo</span></div>
+          <a class="project" data-tags="uav hardware" href="project-route-runner.html">
+            <img class="project-thumb" src="assets/route-runner/build.jpg" alt="Route Runner F450 quadcopter build" />
+            <div class="meta"><span>2025 &middot; Hackathon</span><span>UAV</span></div>
+            <h4>Route Runner</h4>
+            <p>Built and integrated the UAV hardware platform for a hackathon emergency-response drone - prompt-based mission planning, F405 V3 stack, Raspberry Pi onboard compute.</p>
+            <div class="stack"><span>SpeedyBee F405 V3</span><span>Raspberry Pi</span><span>Mission Planner</span><span>Python</span><span>MATLAB</span></div>
             <div class="open">View case study &nearr;</div>
           </a>
-          <a class="project" data-tags="cfd" href="project-cfd.html">
-            <div class="ph">[ CFD &middot; STREAMLINES ]</div>
-            <div class="meta"><span>2025 &middot; Coursework</span><span>CFD</span></div>
-            <h4>CFD &amp; Aerodynamics</h4>
-            <p>Airfoil performance studies and design tradeoffs across CFD and panel-method tools, with mesh and convergence checks.</p>
-            <div class="stack"><span>ANSYS Fluent</span><span>XFLR5</span><span>XFOIL</span><span>MATLAB</span></div>
+          <a class="project" data-tags="uav hardware" href="project-hummingbirb.html">
+            <img class="project-thumb" src="assets/hummingbirb/hero.jpg" alt="Hummingbirb FPV racer with pink propellers" />
+            <div class="meta"><span>2025 &middot; Personal</span><span>FPV / Hardware</span></div>
+            <h4>Hummingbirb</h4>
+            <p>Custom carbon-fiber FPV racer - SpeedyBee F405 V4 stack, GPS-supported safety, custom wiring and tuning, ~70 mph flight tested across many crash / repair cycles.</p>
+            <div class="stack"><span>SpeedyBee F405 V4</span><span>Betaflight</span><span>GPS</span><span>SolidWorks</span><span>Carbon Fiber</span></div>
             <div class="open">View case study &nearr;</div>
           </a>
-          <a class="project" data-tags="uav hardware" href="project-drone-builds.html">
-            <div class="ph">[ DRONE &middot; BUILD ]</div>
-            <div class="meta"><span>2024 &middot; Personal</span><span>Hardware</span></div>
-            <h4>Drone Builds &amp; Flight Test</h4>
-            <p>Custom UAV platforms - FPV quad and small autonomous fixed-wing - built, tuned, and flown end-to-end.</p>
-            <div class="stack"><span>Pixhawk</span><span>SpeedyBee</span><span>QGroundControl</span><span>Arduino</span><span>RPi</span></div>
+          <a class="project" data-tags="research uav" href="project-tilt-rotor.html">
+            <div class="ph">[ TILT-ROTOR &middot; VTOL ]</div>
+            <div class="meta"><span>2024 - Now &middot; AIROU</span><span>Research</span></div>
+            <h4>Tilt-Rotor UAV</h4>
+            <p>Research on a tilt-rotor VTOL platform - propulsion sizing, tilt-mechanism design, and the transition-flight control schedule that hands off between rotor thrust and wing lift.</p>
+            <div class="stack"><span>SolidWorks</span><span>MATLAB / Simulink</span><span>XFLR5</span><span>ROS2</span><span>PX4</span></div>
             <div class="open">View case study &nearr;</div>
           </a>
-          <a class="project" data-tags="space" href="project-prometheus.html">
-            <div class="ph">[ PROMETHEUS &middot; COMM ]</div>
-            <div class="meta"><span>2025 &middot; Space Systems</span><span>Space</span></div>
-            <h4>PROMETHEUS Mars Communications</h4>
-            <p>Concept communications subsystem for a Mars orbital reflective constellation - relay, DTE, and inter-satellite link trade studies.</p>
-            <div class="stack"><span>Systems Engineering</span><span>Link Budgets</span><span>Trade Studies</span><span>MATLAB</span></div>
+          <a class="project" data-tags="research uav" href="project-autonomous-drone.html">
+            <div class="ph">[ AUTONOMOUS DRONE &middot; UAV ]</div>
+            <div class="meta"><span>2024 - Now &middot; AIROU</span><span>Research</span></div>
+            <h4>Autonomous Drone</h4>
+            <p>Research on a small autonomous UAV - ROS2 autonomy stack, perception pipeline, sim-to-real workflow, and the flight-test ops that prove the pieces talk to each other.</p>
+            <div class="stack"><span>ROS2</span><span>PX4</span><span>Gazebo</span><span>OpenCV</span><span>Python</span></div>
             <div class="open">View case study &nearr;</div>
           </a>
         </div>

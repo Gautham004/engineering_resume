@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Route Runner Autonomous Drone - Gautham Chandra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Route Runner autonomous drone project by Gautham Chandra, focused on UAV hardware integration, mission planning, embedded compute, and rapid prototyping for emergency response workflows." />
+  <meta property="og:title" content="Route Runner Autonomous Drone - Gautham Chandra" />
+  <meta property="og:description" content="Hackathon UAV project covering custom drone hardware, SpeedyBee F405 V3 integration, Raspberry Pi onboard compute, mission planning, and autonomous test support." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared/site.css" />
+  <link rel="stylesheet" href="shared/project.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <span class="dot"></span>
+      <span>G &middot; CHANDRA</span>
+    </a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="active" href="experience.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <div class="page-inner">
+      <a class="back-link" href="experience.html">&larr; All Projects</a>
+
+      <header class="page-head">
+        <div class="kicker">Project / 02 &middot; UAV Autonomy</div>
+        <h1>Route Runner</h1>
+      </header>
+
+      <div class="proj-meta-strip">
+        <div><span class="lab">Year</span><span class="val">2025</span></div>
+        <div><span class="lab">Role</span><span class="val">Hardware Lead</span></div>
+        <div><span class="lab">Team</span><span class="val">Hackathon Project</span></div>
+        <div><span class="lab">Status</span><span class="val">Completed</span></div>
+      </div>
+
+      <div class="proj-hero">
+        <img src="assets/route-runner/build.jpg" alt="Route Runner quadcopter build - F450 frame, SpeedyBee F405 V3 stack, and electronics on a workbench" />
+      </div>
+
+      <div class="proj-grid">
+        <aside class="proj-side">
+          <div>
+            <h3>Tools</h3>
+            <ul>
+              <li>SpeedyBee F405 V3</li>
+              <li>Raspberry Pi</li>
+              <li>Mission Planner</li>
+              <li>MATLAB</li>
+              <li>Python</li>
+              <li>F450 Frame</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Domain</h3>
+            <p class="row">UAV Systems &middot; Autonomous Flight &middot; Emergency Response</p>
+          </div>
+          <div>
+            <h3>Deliverables</h3>
+            <p class="row">Custom quadcopter platform, component selection, hardware integration, flight-data support, mission-planning workflow.</p>
+          </div>
+          <!--
+          <div>
+            <h3>Links</h3>
+            <a href="#">GitHub repo &nearr;</a>
+            <a href="#">Demo video &nearr;</a>
+          </div>
+          -->
+        </aside>
+
+        <article class="proj-body">
+          <p class="lede">
+            Built and integrated the UAV hardware platform for Route Runner, a hackathon project designed to help first responders scan hazardous areas, collect aerial data, and support faster situational awareness through prompt-based mission planning.
+          </p>
+
+          <section class="proj-section">
+            <h2>Overview</h2>
+            <p>
+              Route Runner connected a prompt-driven mission-planning workflow with a custom drone platform. The system was designed to generate flight paths, support autonomous scanning, collect live video, and organize post-flight data for emergency response use cases.
+            </p>
+          </section>
+
+          <section class="proj-section">
+            <h2>Problem</h2>
+            <p>
+              First responders often need fast information from areas that may be unsafe to enter directly. The project needed a UAV platform that could be built quickly, support autonomous flight development, carry onboard computation, and provide reliable data for the software team during a short hackathon timeline.
+            </p>
+          </section>
+
+          <section class="proj-section">
+            <h2>Approach</h2>
+            <ul>
+              <li>Defined the hardware requirements around autonomous flight, mission planning, onboard compute, and rapid field testing.</li>
+              <li>Selected compatible motors, propellers, electronics, and frame components that could be assembled and tested within the hackathon timeline.</li>
+              <li>Integrated the SpeedyBee F405 V3 flight stack with a Raspberry Pi to support onboard communication and computation.</li>
+              <li>Collected and organized flight-test data to help the software team refine mission-planning and post-flight analysis workflows.</li>
+            </ul>
+          </section>
+
+          <section class="proj-section">
+            <h2>Contribution</h2>
+            <ul>
+              <li>Led the hardware effort by researching components, selecting motors and propellers, and integrating the custom quadcopter platform.</li>
+              <li>Built the drone around an F450 frame, SpeedyBee F405 V3 50A stack, and Raspberry Pi for onboard computation and communication.</li>
+              <li>Supported autonomous flight testing by collecting flight data, checking hardware behavior, and helping connect the physical drone to the mission-planning system.</li>
+            </ul>
+          </section>
+
+          <figure class="proj-figure">
+            <div class="img-wrap">
+              <img src="assets/route-runner/chat-ui.jpg" alt="Route Runner web app - Talk to The Drone chat interface used to generate flight plans from natural-language prompts" />
+            </div>
+            <figcaption>Fig 01 &middot; Prompt-driven mission planning &mdash; Talk to The Drone chat interface</figcaption>
+          </figure>
+
+          <figure class="proj-figure">
+            <div class="img-wrap">
+              <img src="assets/route-runner/flight-path.jpg" alt="Route Runner generated flight path - XML mission file with waypoints, lat/lon coordinates, altitudes, and Send to RasPi button" />
+            </div>
+            <figcaption>Fig 02 &middot; Generated flight path serialized to a waypoint XML mission file, ready for the onboard Raspberry Pi</figcaption>
+          </figure>
+
+          <figure class="proj-figure">
+            <div class="img-wrap">
+              <img src="assets/route-runner/fleet-monitor.jpg" alt="Route Runner Drone Fleet Monitor dashboard - live tracking, battery, altitude, speed, and mission status for deployed emergency-response drones" />
+            </div>
+            <figcaption>Fig 03 &middot; Fleet monitor &mdash; live tracking, telemetry, and mission status across deployed drones</figcaption>
+          </figure>
+
+          <section class="proj-section">
+            <h2>Outcome</h2>
+            <ul>
+              <li>Built a working autonomous drone platform during a 24-hour hackathon for hazard-area scanning and emergency-response support.</li>
+              <li>Integrated flight hardware, onboard compute, and mission-planning support into a single custom UAV workflow.</li>
+              <li>Provided flight-test data and hardware feedback that helped the software team connect route generation, data capture, and post-flight review.</li>
+              <li>Created a flexible UAV testbed that could support future work in autonomous routing, video capture, and area analysis.</li>
+            </ul>
+          </section>
+
+          <section class="proj-section">
+            <h2>What I Learned</h2>
+            <ul>
+              <li>Hardware decisions have to support the software workflow, especially when autonomy and onboard compute are part of the system.</li>
+              <li>Fast prototyping works best when component compatibility, wiring, and test procedures are checked early.</li>
+              <li>Flight-test data is useful only when it is organized clearly enough for the software and mission-planning teams to act on it.</li>
+            </ul>
+          </section>
+        </article>
+      </div>
+
+      <div class="proj-nav">
+        <a href="project-dbf.html"><span class="dir">Prev</span>&larr; OU DBF</a>
+        <a href="project-hummingbirb.html"><span class="dir">Next</span>Hummingbirb &nearr;</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="shared/stars.js"></script>
+  <script>
+    mountStars({ density: 'soft', speed: 0.5, dim: 0.6 });
+  </script>
+</body>
+</html>

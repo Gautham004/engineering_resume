@@ -30,18 +30,19 @@
       <a class="back-link" href="experience.html">&larr; All Projects</a>
 
       <header class="page-head">
-        <div class="kicker">Project / 01 &middot; Aircraft</div>
-        <h1>DBF Aircraft</h1>
+        <div class="kicker">Project / 01 &middot; OU DBF</div>
+        <h1>OU Design Build Fly</h1>
       </header>
 
       <div class="proj-meta-strip">
-        <div><span class="lab">Year</span><span class="val">2025 - 2026</span></div>
+        <div><span class="lab">Year</span><span class="val">2023 - 2026</span></div>
         <div><span class="lab">Role</span><span class="val">Aerodynamics Lead</span></div>
         <div><span class="lab">Team</span><span class="val">OU AIAA DBF</span></div>
-        <div><span class="lab">Status</span><span class="val">Active</span></div>
-      </div>
+        <div><span class="lab">Status</span><span class="val">Completed / 2026 Season</span></div>      </div>
 
-      <div class="proj-hero ph">[ HERO &middot; DBF AIRFRAME &middot; 16:9 ]</div>
+      <div class="proj-hero">
+        <img src="assets/dbf/plane_model.jpg" alt="OU DBF competition aircraft in flight - red and white airframe with shark-mouth nose art against blue sky" />
+      </div>
 
       <div class="proj-grid">
         <aside class="proj-side">
@@ -54,6 +55,7 @@
               <li>SolidWorks</li>
               <li>ANSYS Fluent</li>
               <li>MATLAB</li>
+              <li>Wind Tunnel</li>
             </ul>
           </div>
           <div>
@@ -64,78 +66,111 @@
             <h3>Deliverables</h3>
             <p class="row">Airfoil &amp; planform design, stability analysis, wind-tunnel test plan, design-review docs.</p>
           </div>
+          <!-- 
           <div>
             <h3>Links</h3>
             <a href="#">Design report &nearr;</a>
             <a href="#">Wind-tunnel data &nearr;</a>
           </div>
+        -->
         </aside>
 
         <article class="proj-body">
           <p class="lede">
-            Owning the aero workflow for the OU AIAA Design/Build/Fly
-            competition aircraft - from mission sizing through
-            wind-tunnel validation and flight-test debrief.
+            Led the aerodynamics workflow for OU AIAA Design/Build/Fly, from mission sizing and airfoil selection to CFD validation, wind-tunnel testing, and flight-test debriefs. My work focused on building a high-lift, low-drag aircraft configuration that could meet payload, stability, and mission-scoring requirements within annual DBF constraints.
           </p>
 
-          <section class="proj-section">
-            <h2>Overview</h2>
-            <p>
-              DBF is a collegiate aerospace competition where teams design,
-              build, and fly a fixed-wing aircraft against a yearly mission
-              spec. As Aerodynamics Lead I drive the airfoil and planform
-              choices that everything downstream - structures, propulsion,
-              payload - has to live with.
-            </p>
-          </section>
+      <section class="proj-section">
+        <h2>Overview</h2>
+        <p>
+          AIAA Design/Build/Fly is a collegiate aircraft design competition where teams design,
+          manufacture, and fly a mission-specific fixed-wing aircraft. As Aerodynamics Lead, I owned
+          the airfoil and planform development process and worked with structures, propulsion, and
+          payload leads to keep the configuration stable, efficient, and manufacturable.
+        </p>
+      </section>
 
           <section class="proj-section">
             <h2>Problem</h2>
             <p>
-              The mission rewards a narrow band of cruise speed, payload
-              fraction, and field length. The wing has to carry a heavy
-              internal payload through tight turns without trading away the
-              cruise drag we need to score laps. CFD alone won't tell us
-              that - we need fast, comparable airfoil sweeps before any
-              high-fidelity work is justified.
+The DBF aircraft had to balance payload capacity, low-speed handling, and cruise efficiency within a strict mission-scoring structure. For the 2025–2026 season, the aircraft also needed to support banner-towing mission requirements while maintaining stable flight, practical manufacturing, and enough stall margin for repeatable competition runs. The main challenge was narrowing the design space quickly before committing to high-fidelity CFD, structural layout, and manufacturing.
             </p>
           </section>
 
           <section class="proj-section">
             <h2>Approach</h2>
             <ul>
-              <li>Screened candidate airfoils in XFOIL across the cruise and high-CL operating points; ranked on L/D, stall margin, and pitching moment.</li>
-              <li>Built an XFLR5 / AVL planform model to evaluate AR, taper, and tail volume against stability and trim drag.</li>
-              <li>Took the top candidates into ANSYS Fluent for 3D RANS checks at the cruise design point with a mesh-convergence study.</li>
-              <li>Coordinated wind-tunnel runs to validate CL/CD/CM and ground-truth the panel-method results.</li>
+              <li>Defined the aerodynamic design targets from mission requirements, including lift, drag, stability, and stall-margin needs.</li>
+              <li>Used low-fidelity tools to screen airfoils and planforms before moving selected configurations into CFD.</li>
+              <li>Compared simulation outputs against wind-tunnel and flight-test observations to improve confidence in the final configuration.</li>
             </ul>
           </section>
 
           <figure class="proj-figure">
-            <div class="ph">[ FIG 01 &middot; AIRFOIL POLAR &middot; XFOIL ]</div>
-            <figcaption>Fig 01 &middot; Candidate airfoil polars at cruise Re</figcaption>
+            <div class="img-wrap">
+              <img src="assets/dbf/airfoil-polars.jpg" alt="CL vs alpha comparison of four candidate airfoils - GOE 502, GOE 177, Eppler 398, Eppler 351" />
+            </div>
+            <figcaption>Fig 01 &middot; CL vs alpha for four shortlisted airfoils during the screening pass</figcaption>
+          </figure>
+
+          <figure class="proj-figure">
+            <div class="img-wrap">
+              <img src="assets/dbf/cfd.jpg" alt="ANSYS Fluent CFD velocity streamlines over the DBF wing, colored by velocity magnitude from 0.3 to 126 m/s" />
+            </div>
+            <figcaption>Fig 02 &middot; ANSYS Fluent velocity streamlines over the wing at the cruise design point</figcaption>
+          </figure>
+
+        <section class="proj-section">
+          <h2>Contribution</h2>
+          <ul>
+            <li>Owned the airfoil down-select process and led aerodynamic trade studies for wing geometry and stability targets.</li>
+            <li>Built the aerodynamic models used during design reviews and coordinated updates with structures, propulsion, and payload leads.</li>
+            <li>Supported manufacturing decisions by reviewing geometry changes before carbon-fiber layup and aircraft integration.</li>
+          </ul>
+        </section>
+
+          <figure class="proj-figure">
+            <div class="img-wrap">
+              <img src="assets/dbf/construction.jpg" alt="DBF aircraft assembly in progress - carbon-fiber wing with 3D-printed bulkhead structure and laser-cut balsa ribs laid out on the workbench" />
+            </div>
+            <figcaption>Fig 03 &middot; Build &middot; carbon-fiber wing, 3D-printed bulkheads, and laser-cut balsa ribs</figcaption>
+          </figure>
+
+          <figure class="proj-figure">
+            <div class="img-wrap">
+              <img src="assets/dbf/wind-tunnel.jpg" alt="Half-span DBF wing model mounted on a sting balance inside the wind-tunnel test section" />
+            </div>
+            <figcaption>Fig 04 &middot; Half-span wing model installed in the wind tunnel for CL / CD / CM measurement</figcaption>
           </figure>
 
           <section class="proj-section">
             <h2>Outcome</h2>
             <ul>
-              <li>Converged on an airfoil + planform that hit the mission's payload band with margin on stall and trim.</li>
-              <li>Wind-tunnel data agreed with panel-method predictions inside the bands we cared about; flagged a Reynolds shift on stall.</li>
-              <li>Wrote the team's first aero design-review template - now used across structures and propulsion.</li>
+              <li>Selected a final airfoil and wing planform that balanced payload capacity, stall margin, trim stability, and cruise efficiency for DBF mission requirements.</li>
+              <li>Validated aerodynamic predictions using XFLR5, AVL, ANSYS Fluent, and wind-tunnel testing to compare lift, drag, and pitching-moment trends.</li>
+              <li>Identified a Reynolds-number shift near stall during testing, which helped improve the team’s understanding of low-speed flight behavior.</li>
+              <li>Improved design confidence before manufacturing by connecting low-fidelity airfoil sweeps with higher-fidelity CFD and physical test data.</li>
+              <li>Created a repeatable aero design-review workflow that helped structures, propulsion, and payload teams make better downstream design decisions.</li>
             </ul>
           </section>
+
+          <section class="proj-section">
+            <h2>What I Learned</h2>
+            <ul>
+              <li>Low-fidelity tools are most useful when they are used to compare trends, not predict final performance perfectly.</li>
+              <li>Airfoil selection affects more than lift and drag; it also drives structure, manufacturability, stability, and payload integration.</li>
+              <li>Wind-tunnel and flight-test data are critical because small Reynolds-number effects can change stall behavior and handling margins.</li>
+            </ul>
+        </section>
         </article>
       </div>
 
       <div class="proj-nav">
         <a href="experience.html"><span class="dir">All</span>&larr; Projects index</a>
-        <a href="project-uav-autonomy.html"><span class="dir">Next</span>UAV Autonomy &nearr;</a>
+        <a href="project-route-runner.html"><span class="dir">Next</span>Route Runner &nearr;</a>
       </div>
 
-      <div class="foot">
-        <span>~/projects/dbf.md</span>
-        <span>05.06.2026</span>
-      </div>
+
     </div>
   </main>
 
