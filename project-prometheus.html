@@ -117,6 +117,13 @@
             <figcaption>Fig 01 &middot; Mars-synchronous constellation geometry, three spacecraft phased 60&deg; apart in equatorial orbit at ~17,032 km altitude, maintaining fixed longitudinal alignment with Elysium Planitia.</figcaption>
           </figure>
 
+          <figure class="proj-figure">
+            <div class="img-wrap">
+              <img src="assets/prometheus/sma-drift.png" alt="Plot of semi-major axis drift over time for the PROMETHEUS spacecraft, showing perturbative deviation from the Mars-synchronous reference altitude" />
+            </div>
+            <figcaption>Fig 02 &middot; Semi-major-axis drift over time without station-keeping. Non-spherical gravity and solar radiation pressure on the 200 m reflector drive the 10&ndash;70 m/s/yr &Delta;v budget needed to hold synchronous altitude.</figcaption>
+          </figure>
+
           <section class="proj-section">
             <h2>Trajectory &amp; Transfer</h2>
             <p>
@@ -126,13 +133,6 @@
               The selected trajectory follows a near-Hohmann path: departure December 2030, Mars arrival October 2031, with a time of flight of 283 days and a total &Delta;v of ~6.5 km/s. After arrival, the spacecraft performs a Mars orbit insertion burn to achieve initial capture, followed by a series of orbit-raising maneuvers to reach the Mars-synchronous altitude, one of the highest &Delta;v events of the mission.
             </p>
           </section>
-
-          <figure class="proj-figure">
-            <div class="img-wrap">
-              <img src="assets/prometheus/porkchop-plot.png" alt="Earth-Mars transfer porkchop plot showing delta-v contours as a heatmap across departure dates on the x-axis and arrival dates on the y-axis, with the low delta-v Hohmann corridor highlighted" />
-            </div>
-            <figcaption>Fig 02 &middot; Earth&ndash;Mars transfer porkchop plot, &Delta;v contours over departure and arrival date space. Selected trajectory (marked): depart 2030-12-23, arrive 2031-10-02, ToF 283 days, total &Delta;v ~6.5 km/s.</figcaption>
-          </figure>
 
           <section class="proj-section">
             <h2>Eclipse &amp; Coverage Analysis</h2>
@@ -146,9 +146,9 @@
 
           <figure class="proj-figure">
             <div class="img-wrap">
-              <img src="assets/prometheus/eclipse-timeline.png" alt="Eclipse timeline chart showing staggered penumbra and umbra events for three PROMETHEUS spacecraft across April to July 2032, with no simultaneous full eclipse overlap" />
+              <img src="assets/prometheus/eclipse.png" alt="Eclipse timeline chart for the three PROMETHEUS spacecraft showing staggered penumbra and umbra periods across the analyzed coverage window" />
             </div>
-            <figcaption>Fig 03 &middot; Eclipse timeline, staggered penumbra and umbra events across the constellation confirm at least one spacecraft remains illuminated throughout the analyzed coverage window.</figcaption>
+            <figcaption>Fig 03 &middot; Eclipse timeline. Staggered penumbra and umbra events across the constellation confirm at least one spacecraft remains illuminated throughout the analyzed coverage window.</figcaption>
           </figure>
 
           <section class="proj-section">
@@ -160,13 +160,6 @@
               I evaluated four architectures (DTE-only, relay-only, hybrid, and hybrid + RF ISL) against availability, fault resiliency, DSN efficiency, and power cost. The selected architecture uses RF inter-satellite crosslinks so non-gateway spacecraft forward data to one active gateway, which performs the scheduled high-rate DSN downlink. Every spacecraft keeps an independent low-rate emergency beacon for safe-mode recovery. Onboard store-and-forward (DTN) buffers up to 7 days of data to survive missed contacts and solar conjunction blackouts.
             </p>
           </section>
-
-          <figure class="proj-figure">
-            <div class="img-wrap">
-              <img src="assets/prometheus/comms-flowdown.png" alt="Communications subsystem requirements flow-down diagram from link architecture through RF hardware, onboard DTN networking, ground segment, and fault management" />
-            </div>
-            <figcaption>Fig 04 &middot; Communications subsystem flow-down, from link architecture selection through RF hardware sizing, onboard DTN store-and-forward, ground segment interfaces, and autonomous fault management.</figcaption>
-          </figure>
 
           <section class="proj-section">
             <h2>Outcome</h2>
