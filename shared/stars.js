@@ -18,17 +18,17 @@
         position: fixed;
         inset: 0;
         overflow: hidden;
-        background: #090A0F;
+        background: #04050A;
         z-index: -1;
       }
       .stars-root.absolute { position: absolute; }
       .stars-root .gradient {
         position: absolute; inset: 0;
-        background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+        background: radial-gradient(ellipse at bottom, #0E1520 0%, #04050A 100%);
       }
       .stars-root .veil {
         position: absolute; inset: 0;
-        background: linear-gradient(180deg, rgba(9,10,15,0.0) 0%, rgba(9,10,15,0.55) 100%);
+        background: linear-gradient(180deg, rgba(4,5,10,0.0) 0%, rgba(4,5,10,0.55) 100%);
         pointer-events: none;
       }
       .stars-root .layer {
@@ -92,7 +92,7 @@
     if (dim > 0) {
       const v = document.createElement('div');
       v.className = 'veil';
-      v.style.background = `linear-gradient(180deg, rgba(9,10,15,${dim*0.4}) 0%, rgba(9,10,15,${dim}) 100%)`;
+      v.style.background = `linear-gradient(180deg, rgba(4,5,10,${dim*0.4}) 0%, rgba(4,5,10,${dim}) 100%)`;
       root.appendChild(v);
     }
 
