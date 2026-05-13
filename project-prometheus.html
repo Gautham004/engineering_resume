@@ -32,7 +32,7 @@
 
       <header class="page-head">
         <div class="kicker">Project / 04 &middot; Space Systems</div>
-        <h1>PROMETHEUS &mdash; Mars Mission Design</h1>
+        <h1>PROMETHEUS, Mars Mission Design</h1>
       </header>
 
       <div class="proj-meta-strip">
@@ -64,7 +64,7 @@
           </div>
           <div>
             <h3>Team</h3>
-            <p class="row">5-person multidisciplinary team &mdash; astrodynamics, power, ADCS, comms, and business.</p>
+            <p class="row">5-person multidisciplinary team covering astrodynamics, power, ADCS, comms, and business.</p>
           </div>
           <div>
             <h3>Deliverables</h3>
@@ -74,13 +74,13 @@
 
         <article class="proj-body">
           <p class="lede">
-            A full systems engineering concept for an orbital solar augmentation mission at Mars &mdash; three spacecraft in Mars-synchronous orbit, each deploying a 200-meter reflector to redirect sunlight to the Martian surface, designed within a hard $1.5 billion budget constraint.
+            A full systems engineering concept for an orbital solar augmentation mission at Mars. Three spacecraft in Mars-synchronous orbit, each deploying a 200-meter reflector to redirect sunlight to the Martian surface, designed within a hard $1.5 billion budget constraint.
           </p>
 
           <section class="proj-section">
             <h2>The Problem with Power on Mars</h2>
             <p>
-              At 1.52 AU, Mars receives only ~43% of Earth&rsquo;s solar flux &mdash; roughly 590 W/m&sup2; at the top of the atmosphere, reduced further by dust, atmospheric scattering, and seasonal variation. During regional dust storms, surface solar flux can drop by more than 50%. This low and unpredictable energy environment has ended real missions: dust accumulation on solar arrays was a primary factor in the loss of the Opportunity rover.
+              At 1.52 AU, Mars receives only ~43% of Earth&rsquo;s solar flux, roughly 590 W/m&sup2; at the top of the atmosphere, reduced further by dust, atmospheric scattering, and seasonal variation. During regional dust storms, surface solar flux can drop by more than 50%. This low and unpredictable energy environment has ended real missions: dust accumulation on solar arrays was a primary factor in the loss of the Opportunity rover.
             </p>
             <p>
               Surface power systems respond to this by over-sizing arrays, adding battery storage, and designing conservatively around worst-case conditions. PROMETHEUS reframes the problem: instead of fighting the energy environment from the surface, shift energy control to orbit. Reflective spacecraft intercept solar radiation and redirect it to target regions with controlled timing, turning an uncontrollable passive resource into a managed system input.
@@ -90,10 +90,10 @@
           <section class="proj-section">
             <h2>Mission Concept</h2>
             <p>
-              The PROMETHEUS constellation consists of three to four identical spacecraft in Mars-synchronous orbit &mdash; a circular equatorial orbit whose period matches Mars&rsquo; sidereal rotation of ~24.6 hours. Each spacecraft carries a deployable thin-film reflector approximately 200 meters in diameter (~31,400 m&sup2; effective area), made from aluminized Kapton chosen for its mass efficiency, reflectivity, and material heritage.
+              The PROMETHEUS constellation consists of three to four identical spacecraft in Mars-synchronous orbit, a circular equatorial orbit whose period matches Mars&rsquo; sidereal rotation of ~24.6 hours. Each spacecraft carries a deployable thin-film reflector approximately 200 meters in diameter (~31,400 m&sup2; effective area), made from aluminized Kapton chosen for its mass efficiency, reflectivity, and material heritage.
             </p>
             <p>
-              The reflectors redirect solar radiation to target regions near Elysium Planitia, raising local surface irradiance from ~590 W/m&sup2; to ~800 W/m&sup2; &mdash; a net augmentation of +210 W/m&sup2;. Energy is distributed across a broad footprint rather than concentrated, maintaining thermally safe flux levels while meaningfully improving photovoltaic output, thermal stability, and the energy available for in-situ resource utilization (ISRU).
+              The reflectors redirect solar radiation to target regions near Elysium Planitia, raising local surface irradiance from ~590 W/m&sup2; to ~800 W/m&sup2;, a net augmentation of +210 W/m&sup2;. Energy is distributed across a broad footprint rather than concentrated, maintaining thermally safe flux levels while meaningfully improving photovoltaic output, thermal stability, and the energy available for in-situ resource utilization (ISRU).
             </p>
           </section>
 
@@ -114,16 +114,16 @@
             <div class="img-wrap">
               <img src="assets/prometheus/constellation-geometry.png" alt="3D visualization of three PROMETHEUS spacecraft in equatorial Mars-synchronous orbit phased 60 degrees apart around Mars" />
             </div>
-            <figcaption>Fig 01 &middot; Mars-synchronous constellation geometry &mdash; three spacecraft phased 60&deg; apart in equatorial orbit at ~17,032 km altitude, maintaining fixed longitudinal alignment with Elysium Planitia.</figcaption>
+            <figcaption>Fig 01 &middot; Mars-synchronous constellation geometry, three spacecraft phased 60&deg; apart in equatorial orbit at ~17,032 km altitude, maintaining fixed longitudinal alignment with Elysium Planitia.</figcaption>
           </figure>
 
           <section class="proj-section">
             <h2>Trajectory &amp; Transfer</h2>
             <p>
-              Earth&ndash;Mars launch opportunities occur approximately every 780 days when planetary geometry allows minimum-energy transfers. The team used a porkchop plot &mdash; a contour map of required &Delta;v over a range of departure and arrival dates &mdash; to identify the optimal transfer window. Earth and Mars ephemeris data from the Spiceypy Python library were used to generate the plot.
+              Earth&ndash;Mars launch opportunities occur approximately every 780 days when planetary geometry allows minimum-energy transfers. The team used a porkchop plot (a contour map of required &Delta;v over a range of departure and arrival dates) to identify the optimal transfer window. Earth and Mars ephemeris data from the Spiceypy Python library were used to generate the plot.
             </p>
             <p>
-              The selected trajectory follows a near-Hohmann path: departure December 2030, Mars arrival October 2031, with a time of flight of 283 days and a total &Delta;v of ~6.5 km/s. After arrival, the spacecraft performs a Mars orbit insertion burn to achieve initial capture, followed by a series of orbit-raising maneuvers to reach the Mars-synchronous altitude &mdash; one of the highest &Delta;v events of the mission.
+              The selected trajectory follows a near-Hohmann path: departure December 2030, Mars arrival October 2031, with a time of flight of 283 days and a total &Delta;v of ~6.5 km/s. After arrival, the spacecraft performs a Mars orbit insertion burn to achieve initial capture, followed by a series of orbit-raising maneuvers to reach the Mars-synchronous altitude, one of the highest &Delta;v events of the mission.
             </p>
           </section>
 
@@ -131,7 +131,7 @@
             <div class="img-wrap">
               <img src="assets/prometheus/porkchop-plot.png" alt="Earth-Mars transfer porkchop plot showing delta-v contours as a heatmap across departure dates on the x-axis and arrival dates on the y-axis, with the low delta-v Hohmann corridor highlighted" />
             </div>
-            <figcaption>Fig 02 &middot; Earth&ndash;Mars transfer porkchop plot &mdash; &Delta;v contours over departure and arrival date space. Selected trajectory (marked): depart 2030-12-23, arrive 2031-10-02, ToF 283 days, total &Delta;v ~6.5 km/s.</figcaption>
+            <figcaption>Fig 02 &middot; Earth&ndash;Mars transfer porkchop plot, &Delta;v contours over departure and arrival date space. Selected trajectory (marked): depart 2030-12-23, arrive 2031-10-02, ToF 283 days, total &Delta;v ~6.5 km/s.</figcaption>
           </figure>
 
           <section class="proj-section">
@@ -148,11 +148,11 @@
             <div class="img-wrap">
               <img src="assets/prometheus/eclipse-timeline.png" alt="Eclipse timeline chart showing staggered penumbra and umbra events for three PROMETHEUS spacecraft across April to July 2032, with no simultaneous full eclipse overlap" />
             </div>
-            <figcaption>Fig 03 &middot; Eclipse timeline &mdash; staggered penumbra and umbra events across the constellation confirm at least one spacecraft remains illuminated throughout the analyzed coverage window.</figcaption>
+            <figcaption>Fig 03 &middot; Eclipse timeline, staggered penumbra and umbra events across the constellation confirm at least one spacecraft remains illuminated throughout the analyzed coverage window.</figcaption>
           </figure>
 
           <section class="proj-section">
-            <h2>My Contribution &mdash; Communications</h2>
+            <h2>My Contribution to Communications</h2>
             <p>
               I owned the communications subsystem, which had to solve a harder problem than raw link performance: how do you operate a constellation autonomously when every command takes 4&ndash;24 minutes to arrive and the Deep Space Network is a shared, scheduled resource?
             </p>
@@ -165,7 +165,7 @@
             <div class="img-wrap">
               <img src="assets/prometheus/comms-flowdown.png" alt="Communications subsystem requirements flow-down diagram from link architecture through RF hardware, onboard DTN networking, ground segment, and fault management" />
             </div>
-            <figcaption>Fig 04 &middot; Communications subsystem flow-down &mdash; from link architecture selection through RF hardware sizing, onboard DTN store-and-forward, ground segment interfaces, and autonomous fault management.</figcaption>
+            <figcaption>Fig 04 &middot; Communications subsystem flow-down, from link architecture selection through RF hardware sizing, onboard DTN store-and-forward, ground segment interfaces, and autonomous fault management.</figcaption>
           </figure>
 
           <section class="proj-section">
@@ -181,9 +181,9 @@
           <section class="proj-section">
             <h2>What I Learned</h2>
             <ul>
-              <li>Orbital design is never just an astrodynamics problem &mdash; the choice of Mars-synchronous orbit directly shaped every other subsystem&rsquo;s requirements, from pointing accuracy to station-keeping &Delta;v to eclipse battery sizing.</li>
+              <li>Orbital design choices drive every subsystem. The Mars-synchronous orbit directly shaped pointing accuracy, station-keeping &Delta;v, and eclipse battery sizing across the mission.</li>
               <li>Constraint-driven design sharpens decisions. The $1.5B ceiling forced real trade-offs between constellation size, reflector scale, and subsystem complexity that wouldn&rsquo;t have existed in an unconstrained exercise.</li>
-              <li>Perturbative forces at Mars (non-spherical gravity + solar radiation pressure on a 200 m reflector) are large enough to dominate station-keeping design &mdash; the reflector and the orbit are coupled systems, not independent ones.</li>
+              <li>Perturbative forces at Mars (non-spherical gravity + solar radiation pressure on a 200 m reflector) are large enough to dominate station-keeping design. The reflector and the orbit are coupled systems, not independent ones.</li>
               <li>Multi-disciplinary integration is where concept missions succeed or fail. Power, ADCS, comms, and the reflector payload all feed into each other, and tracking those dependencies across a team is as much an engineering challenge as any individual subsystem.</li>
             </ul>
           </section>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Contact — Gautham Chandra</title>
+  <title>Contact · Gautham Chandra</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -196,14 +196,13 @@
       <div class="contact-grid">
         <section class="contact-intro">
           <p class="lede">
-            Open to internships and new-grad roles in aerospace design, UAV
-            autonomy, flight test, and space systems &mdash; starting Summer 2026.
+            I'm open to new-grad and entry-level roles in aerospace design,
+            UAV systems, flight test, hardware integration, and space
+            systems starting Summer 2026.
           </p>
           <p>
-            Email is the fastest path. I read everything that isn't a
-            recruiter blast and reply within a couple of days. Happy to
-            send a copy of my resume, project writeups, or flight-test
-            footage on request.
+            Email is the best way to reach me. I'm happy to share my resume,
+            project writeups, test footage, or technical details on request.
           </p>
 
           <div class="channels">
@@ -270,7 +269,7 @@
               <textarea id="msg" name="msg" placeholder="A few sentences is plenty." required></textarea>
             </div>
             <div class="compose-foot">
-              <span class="hint">&mdash; end-to-end transit &middot; not stored on this server</span>
+              <span class="hint">replies within ~48h &middot; direct email also works</span>
               <button class="btn" type="submit">Transmit</button>
             </div>
           </form>
@@ -288,7 +287,7 @@
   <script>
     mountStars({ density: 'soft', speed: 0.5, dim: 0.55 });
 
-    // Local clock (Norman, OK — Central Time)
+    // Local clock (Norman, OK, Central Time)
     function tick() {
       const now = new Date();
       const f = new Intl.DateTimeFormat('en-US', {
@@ -300,7 +299,7 @@
     tick();
     setInterval(tick, 30000);
 
-    // Form submit — Formspree
+    // Form submit, Formspree
     // Setup: go to formspree.io, create a free form, paste your endpoint below
     const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpqbnzkg';
 
@@ -329,12 +328,12 @@
         } else {
           btn.disabled = false;
           btn.textContent = 'Transmit';
-          alert('Something went wrong — please email me directly.');
+          alert('Something went wrong. Please email me directly.');
         }
       } catch {
         btn.disabled = false;
         btn.textContent = 'Transmit';
-        alert('Network error — please email me directly.');
+        alert('Network error. Please email me directly.');
       }
     });
   </script>
