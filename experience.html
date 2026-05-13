@@ -9,10 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="shared/site.css" />
   <style>
+    /* Filter bar: Liquid Glass pill group with sliding indicator */
     .filter-bar {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
       flex-wrap: wrap;
       margin-bottom: 40px;
     }
@@ -22,25 +23,64 @@
       color: var(--fg-muted);
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-right: 8px;
+    }
+    .filter-pills {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      padding: 5px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(25px) saturate(180%);
+      -webkit-backdrop-filter: blur(25px) saturate(180%);
+      box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      overflow: hidden;
+    }
+    .filter-indicator {
+      position: absolute;
+      top: 5px;
+      bottom: 5px;
+      left: 0;
+      width: 0;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.45),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+      transition:
+        left 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+        width 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+      pointer-events: none;
+      z-index: 0;
     }
     .chip {
+      position: relative;
+      z-index: 1;
       font-family: var(--mono);
       font-size: 11px;
       color: var(--fg-muted);
-      letter-spacing: 1px;
-      padding: 8px 14px;
-      border: 1px solid var(--rule);
+      letter-spacing: 1.5px;
+      padding: 10px 18px;
+      border: none;
       border-radius: 999px;
       background: transparent;
       cursor: pointer;
-      transition: all 0.2s ease;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: color 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-    .chip:hover { color: var(--fg); border-color: var(--rule-strong); }
+    .chip:hover { color: var(--fg); }
     .chip.active {
-      color: var(--bg);
-      background: var(--fg);
-      border-color: var(--fg);
+      color: #04050A;
+      font-weight: 500;
+    }
+    .chip:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
     }
 
     /* Projects grid */
@@ -226,14 +266,17 @@
       </header>
 
       <div class="filter-bar">
-        <span class="label">Filter &middot;</span>
-        <button class="chip active" data-tag="all">All</button>
-        <button class="chip" data-tag="aircraft">Aircraft</button>
-        <button class="chip" data-tag="uav">UAV</button>
-        <button class="chip" data-tag="research">Research</button>
-        <button class="chip" data-tag="hardware">Hardware</button>
-        <button class="chip" data-tag="space">Space</button>
-        <button class="chip" data-tag="industry">Industry</button>
+        <span class="label">Filter</span>
+        <div class="filter-pills" id="filter-pills" role="group" aria-label="Filter projects by category">
+          <span class="filter-indicator" aria-hidden="true"></span>
+          <button class="chip active" data-tag="all" aria-pressed="true">All</button>
+          <button class="chip" data-tag="aircraft" aria-pressed="false">Aircraft</button>
+          <button class="chip" data-tag="uav" aria-pressed="false">UAV</button>
+          <button class="chip" data-tag="research" aria-pressed="false">Research</button>
+          <button class="chip" data-tag="hardware" aria-pressed="false">Hardware</button>
+          <button class="chip" data-tag="space" aria-pressed="false">Space</button>
+          <button class="chip" data-tag="industry" aria-pressed="false">Industry</button>
+        </div>
       </div>
 
       <section>
@@ -369,13 +412,33 @@
   <script>
     mountStars({ density: 'soft', speed: 0.6, dim: 0.7 });
 
-    // Filter chips
+    // Filter chips: Liquid Glass pill group with sliding indicator
     const chips = document.querySelectorAll('.chip');
     const projects = document.querySelectorAll('.project');
+    const filterPills = document.getElementById('filter-pills');
+    const filterIndicator = filterPills?.querySelector('.filter-indicator');
+
+    function moveFilterIndicator(activeChip) {
+      if (!activeChip || !filterIndicator) return;
+      filterIndicator.style.width = activeChip.offsetWidth + 'px';
+      filterIndicator.style.left = activeChip.offsetLeft + 'px';
+    }
+
+    // Position the indicator on load (wait one frame so fonts/layout settle)
+    requestAnimationFrame(() => {
+      moveFilterIndicator(filterPills?.querySelector('.chip.active'));
+    });
+
     chips.forEach(chip => {
       chip.addEventListener('click', () => {
-        chips.forEach(c => c.classList.remove('active'));
+        chips.forEach(c => {
+          c.classList.remove('active');
+          c.setAttribute('aria-pressed', 'false');
+        });
         chip.classList.add('active');
+        chip.setAttribute('aria-pressed', 'true');
+        moveFilterIndicator(chip);
+
         const tag = chip.dataset.tag;
         projects.forEach(p => {
           if (tag === 'all' || p.dataset.tags.includes(tag)) {
@@ -384,6 +447,15 @@
             p.classList.add('dimmed');
           }
         });
+      });
+    });
+
+    // Reposition on resize (chip widths can change at breakpoints)
+    let resizeRaf;
+    window.addEventListener('resize', () => {
+      cancelAnimationFrame(resizeRaf);
+      resizeRaf = requestAnimationFrame(() => {
+        moveFilterIndicator(filterPills?.querySelector('.chip.active'));
       });
     });
   </script>
