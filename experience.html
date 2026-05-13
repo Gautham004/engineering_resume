@@ -83,30 +83,54 @@
       outline-offset: 3px;
     }
 
-    /* Projects grid */
+    /* Projects grid: Liquid Glass cards with nested thumbnails */
     .project-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 24px;
     }
     .project {
-      border: 1px solid var(--rule);
-      padding: 28px;
-      transition: border-color 0.25s ease, transform 0.25s ease, opacity 0.3s ease, filter 0.3s ease;
+      position: relative;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 16px;
+      padding: 22px;
       color: var(--fg);
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg,
+          rgba(255, 255, 255, 0.05) 0%,
+          rgba(255, 255, 255, 0.018) 35%,
+          rgba(255, 255, 255, 0.022) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(24px) saturate(170%);
+      -webkit-backdrop-filter: blur(24px) saturate(170%);
+      box-shadow:
+        0 10px 32px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      transition:
+        transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+        border-color 0.35s ease,
+        opacity 0.4s ease,
+        filter 0.4s ease;
     }
-    .project:hover { border-color: var(--rule-strong); transform: translateY(-2px); }
+    .project:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.16);
+      box-shadow:
+        0 20px 48px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    }
     .project.dimmed { opacity: 0.2; filter: grayscale(1); pointer-events: none; }
-    .project .ph { aspect-ratio: 16/9; }
+    .project .ph { aspect-ratio: 16/9; border-radius: 16px; }
     .project .project-thumb {
       width: 100%;
       aspect-ratio: 16/9;
       object-fit: cover;
       display: block;
-      border: 1px solid var(--rule);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
     .project .meta {
       display: flex; justify-content: space-between; align-items: center;
