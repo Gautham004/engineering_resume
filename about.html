@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="shared/site.css" />
   <style>
     .intro {
@@ -77,14 +78,16 @@
     }
     .skills .col h3 {
       font-family: var(--mono);
-      font-size: 10px;
-      color: var(--accent);
+      font-size: 13px;
+      color: var(--fg);
       letter-spacing: 3px;
       text-transform: uppercase;
-      margin: 0 0 14px;
-      font-weight: 400;
+      margin: 0 0 18px;
+      font-weight: 500;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
     }
-    .skills .col h3:not(:first-child) { margin-top: 28px; }
+    .skills .col h3:not(:first-child) { margin-top: 36px; }
     .skills .col ul {
       margin: 0; padding: 0; list-style: none;
       display: flex; flex-direction: column; gap: 6px;
@@ -139,36 +142,27 @@
         </div>
         <div class="body">
           <p class="lede">
-            I'm an aerospace engineering student focused on aerodynamics,
-            autonomous UAV systems, flight testing, and hands-on hardware
-            integration.
+            I'm an aerospace engineering student at the University of
+            Oklahoma focused on aerodynamics, autonomous UAV systems,
+            flight testing, and hands-on hardware integration.
           </p>
           <p>
             I like projects where analysis, fabrication, electronics,
-            software, and testing all have to work together. My experience
+            software, and testing all come together. My experience
             includes DBF aircraft design, CFD and airfoil trade studies,
             ROS2-based autonomy research, carbon-fiber UAV builds, and
             aerospace hardware testing.
           </p>
           <p>
-            I'm finishing my B.S. in Aerospace Engineering at the University
-            of Oklahoma. Outside class, I lead aerodynamics for OU's AIAA
-            Design/Build/Fly team, support autonomous UAV research at AIROU,
-            and build flight hardware through personal and team projects.
+            At OU, I lead aerodynamics for the AIAA Design/Build/Fly team
+            and support autonomous UAV research at AIROU. I also build
+            and test flight hardware through personal and team projects.
           </p>
           <p>
-            When I'm not working on aircraft, I'm usually building drones,
-            debugging wiring, reviewing flight-test data, or reading about
-            propulsion and spacecraft systems.
+            Outside of engineering, I work as a photographer and
+            videographer, fly drones, and play games like Minecraft and
+            Valorant.
           </p>
-        </div>
-      </section>
-
-      <section class="quick-facts">
-        <div class="fact">
-          <div class="label">Engineering Projects</div>
-          <div class="value">10+</div>
-          <div class="sub">since 2023</div>
         </div>
       </section>
 
@@ -234,7 +228,7 @@
 
   <script src="shared/stars.js"></script>
   <script>
-    mountStars({ density: 'soft', speed: 0.6, dim: 0.7 });
+    mountStars({ density: 'soft', speed: 0.6, dim: 0.92 });
   </script>
 </body>
 </html>

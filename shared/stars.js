@@ -62,7 +62,7 @@
     const dim = opts.dim != null ? opts.dim : 0;
 
     const counts = density === 'soft'
-      ? { s: 350, m: 90, b: 40 }
+      ? { s: 100, m: 25, b: 8 }
       : { s: 700, m: 200, b: 100 };
 
     const root = document.createElement('div');
@@ -92,7 +92,7 @@
     if (dim > 0) {
       const v = document.createElement('div');
       v.className = 'veil';
-      v.style.background = `linear-gradient(180deg, rgba(4,5,10,${dim*0.4}) 0%, rgba(4,5,10,${dim}) 100%)`;
+      v.style.background = `linear-gradient(180deg, rgba(4,5,10,${dim*0.85}) 0%, rgba(4,5,10,${dim}) 100%)`;
       root.appendChild(v);
     }
 

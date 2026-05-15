@@ -166,6 +166,18 @@ a { color: var(--fg); text-decoration: none; }
   color: var(--fg);
   border-color: var(--rule-strong);
 }
+.btn-primary {
+  background: rgba(255,255,255,0.95);
+  color: var(--bg);
+  border-color: rgba(255,255,255,0.95);
+}
+.btn-primary:hover {
+  background: #fff;
+  color: var(--bg);
+  border-color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(255,255,255,0.18);
+}
 
 /* Mono labels */
 .mono { font-family: var(--mono); }

@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="shared/site.css" />
   <style>
     .resume-actions {
@@ -97,10 +98,10 @@
       display: flex; flex-direction: column; gap: 6px;
     }
     .res-job li {
-      font-size: 13px;
-      line-height: 1.6;
-      color: rgba(255,255,255,0.82);
-      padding-left: 14px;
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.85);
+      padding-left: 16px;
       position: relative;
     }
     .res-job li::before {
@@ -109,6 +110,12 @@
       left: 0;
       color: var(--accent);
       font-weight: 700;
+    }
+    .res-job li strong,
+    .summary strong,
+    .res-grid .val strong {
+      color: rgba(255,255,255,1);
+      font-weight: 600;
     }
 
     .res-grid {
@@ -124,15 +131,15 @@
       text-transform: uppercase;
     }
     .res-grid .val {
-      font-size: 13px;
+      font-size: 14.5px;
       color: rgba(255,255,255,0.85);
       line-height: 1.75;
     }
 
     .summary {
-      font-size: 14px;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.85);
+      font-size: 15.5px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.88);
       max-width: 70ch;
     }
 
@@ -190,14 +197,15 @@
         <section class="res-section">
           <h2>Summary</h2>
           <p class="summary">
-            Aerospace engineering student focused on aerodynamics, UAV
-            systems, flight testing, and hands-on hardware integration. I
-            work across the full design cycle, from early analysis and
-            simulation to fabrication, test planning, troubleshooting, and
-            post-test review. My experience includes DBF aircraft design,
-            autonomous drone research, ROS2 integration, CFD-driven trade
-            studies, carbon-fiber fabrication, and integrated aerospace
-            hardware testing.
+            Aerospace engineering student focused on <strong>aerodynamics</strong>,
+            <strong>UAV systems</strong>, <strong>flight testing</strong>, and
+            <strong>hands-on hardware integration</strong>. I work across the full
+            design cycle, from early analysis and simulation to fabrication,
+            test planning, troubleshooting, and post-test review. My experience
+            includes <strong>DBF aircraft design</strong>, <strong>autonomous
+            drone research</strong>, <strong>ROS2 integration</strong>,
+            <strong>CFD-driven trade studies</strong>, <strong>carbon-fiber
+            fabrication</strong>, and integrated aerospace hardware testing.
           </p>
         </section>
 
@@ -209,10 +217,10 @@
               <h3 class="title">Aerodynamics Lead</h3>
               <div class="co">OU AIAA Design / Build / Fly</div>
               <ul>
-                <li>Led aerodynamic design work for OU's AIAA Design/Build/Fly aircraft, including airfoil selection, planform sizing, stability analysis, and design-review support.</li>
-                <li>Screened airfoils in XFOIL, XFLR5, and AVL to compare lift, drag, stall margin, pitching moment, and mission fit.</li>
-                <li>Built aerodynamic models to support wing sizing, tail sizing, trim analysis, and aircraft configuration trades.</li>
-                <li>Supported wind-tunnel testing by helping define test plans, organize runs, reduce CL, CD, and CM data, and compare results against simulation trends.</li>
+                <li><strong>Led aerodynamic design</strong> for OU's AIAA Design/Build/Fly aircraft, including airfoil selection, planform sizing, stability analysis, and design-review support.</li>
+                <li>Screened airfoils in <strong>XFOIL, XFLR5, and AVL</strong> to compare lift, drag, stall margin, pitching moment, and mission fit.</li>
+                <li>Built aerodynamic models to support <strong>wing sizing, tail sizing, trim analysis</strong>, and aircraft configuration trades.</li>
+                <li>Supported <strong>wind-tunnel testing</strong> by helping define test plans, organize runs, reduce CL, CD, and CM data, and compare results against simulation trends.</li>
                 <li>Created aero design-review documentation used to communicate assumptions, tradeoffs, and design decisions across structures, propulsion, and payload teams.</li>
               </ul>
             </div>
@@ -224,10 +232,10 @@
               <h3 class="title">Undergraduate Research Assistant</h3>
               <div class="co">AIROU / AIRLAB, University of Oklahoma</div>
               <ul>
-                <li>Supported autonomous UAV research through ROS2 integration, telemetry review, test preparation, and hardware / software troubleshooting.</li>
-                <li>Built and maintained ROS2 workflows for sensor integration, vehicle communication, simulation, and test support.</li>
-                <li>Helped plan UAV test events, including pre-flight checks, system validation, range setup, and post-test log review.</li>
-                <li>Used Python and MATLAB to organize telemetry data, identify anomalies, and support root-cause analysis after test runs.</li>
+                <li>Supported autonomous UAV research through <strong>ROS2 integration</strong>, telemetry review, test preparation, and hardware / software troubleshooting.</li>
+                <li>Built and maintained <strong>ROS2 workflows</strong> for sensor integration, vehicle communication, simulation, and test support.</li>
+                <li>Helped plan UAV test events, including <strong>pre-flight checks</strong>, system validation, range setup, and post-test log review.</li>
+                <li>Used <strong>Python and MATLAB</strong> to organize telemetry data, identify anomalies, and support root-cause analysis after test runs.</li>
                 <li>Improved test repeatability by updating checklists, configuration notes, and recovery procedures between flight-test iterations.</li>
               </ul>
             </div>
@@ -239,11 +247,11 @@
               <h3 class="title">Aerospace Engineering Intern</h3>
               <div class="co">Solakair</div>
               <ul>
-                <li>Supported aerospace hardware integration, electrical subsystem checkout, CAD updates, and interface control documentation.</li>
-                <li>Performed pinout checks, continuity checks, and structured checkout procedures before integrated system testing.</li>
-                <li>Maintained CAD and documentation updates to track as-designed and as-built system changes.</li>
+                <li>Supported <strong>aerospace hardware integration</strong>, electrical subsystem checkout, CAD updates, and interface control documentation.</li>
+                <li>Performed <strong>pinout checks, continuity checks</strong>, and structured checkout procedures before integrated system testing.</li>
+                <li>Maintained <strong>CAD and documentation updates</strong> to track as-designed and as-built system changes.</li>
                 <li>Documented discrepancies, supported troubleshooting, and updated technical notes for follow-on testing.</li>
-                <li>Contributed to interface control documentation and test procedures used during hardware verification.</li>
+                <li>Contributed to <strong>interface control documentation</strong> and test procedures used during hardware verification.</li>
               </ul>
             </div>
             <div class="when">Feb - May 2026<br />Remote</div>
@@ -254,9 +262,9 @@
               <h3 class="title">System Administrator</h3>
               <div class="co">University of Oklahoma IT</div>
               <ul>
-                <li>Provided technical support for university students, faculty, and staff across hardware, software, networking, accounts, and classroom systems.</li>
+                <li>Provided <strong>technical support</strong> for university students, faculty, and staff across hardware, software, networking, accounts, and classroom systems.</li>
                 <li>Resolved user issues while documenting steps clearly for teammates and escalation support.</li>
-                <li>Supported lab and classroom technology by troubleshooting system failures, checking equipment status, and restoring service quickly.</li>
+                <li>Supported <strong>lab and classroom technology</strong> by troubleshooting system failures, checking equipment status, and restoring service quickly.</li>
                 <li>Built stronger technical communication skills through user support, written documentation, and issue triage under time pressure.</li>
               </ul>
             </div>
@@ -268,10 +276,10 @@
               <h3 class="title">Founder &amp; Photographer</h3>
               <div class="co">Specter Studio</div>
               <ul>
-                <li>Founded and operate a photography business focused on sports, events, portraits, and client-based visual work.</li>
-                <li>Generated $20,000 in revenue over 6 months through direct outreach, repeat clients, and local event coverage.</li>
-                <li>Grew sales by 70% over 9 months by improving client outreach, delivery workflow, and portfolio presentation.</li>
-                <li>Designed and built a custom portfolio website using HTML, CSS, and JavaScript.</li>
+                <li><strong>Founded and operate</strong> a photography business focused on sports, events, portraits, and client-based visual work.</li>
+                <li>Generated <strong>$20,000 in revenue over 6 months</strong> through direct outreach, repeat clients, and local event coverage.</li>
+                <li>Grew sales by <strong>70% over 9 months</strong> by improving client outreach, delivery workflow, and portfolio presentation.</li>
+                <li>Designed and built a custom portfolio website using <strong>HTML, CSS, and JavaScript</strong>.</li>
                 <li>Managed the full client workflow, including outreach, scheduling, shooting, editing, gallery delivery, and follow-up.</li>
               </ul>
             </div>
@@ -333,19 +341,19 @@
           <h2>Selected Projects</h2>
           <div class="res-grid">
             <div class="lab">2023 - 2026 &middot; OU AIAA</div>
-            <div class="val"><b><a href="project-dbf.html" style="color: inherit;">OU Design Build Fly.</a></b> Led aerodynamic design for OU's AIAA Design/Build/Fly aircraft across multiple competition seasons. Owned airfoil selection, planform sizing, stability analysis, CFD support, wind-tunnel planning, and flight-test review. Built models and design-review material that helped structures, propulsion, and payload teams make better configuration decisions.</div>
+            <div class="val"><b><a href="project-dbf.html" style="color: inherit;">OU Design Build Fly.</a></b> Led aerodynamic design for OU's AIAA Design/Build/Fly aircraft across <strong>multiple competition seasons</strong>. Owned <strong>airfoil selection, planform sizing, stability analysis, CFD support, wind-tunnel planning</strong>, and flight-test review. Built models and design-review material that helped structures, propulsion, and payload teams make better configuration decisions.</div>
             <div class="lab">2025 &middot; Hackathon</div>
-            <div class="val"><b><a href="project-route-runner.html" style="color: inherit;">Route Runner.</a></b> Built and integrated the UAV hardware platform for a 24-hour hackathon emergency-response drone. Selected components, assembled the F450-based platform, integrated a SpeedyBee F405 V3 stack with Raspberry Pi onboard compute, and supported mission-planning tests with flight data and hardware feedback.</div>
+            <div class="val"><b><a href="project-route-runner.html" style="color: inherit;">Route Runner.</a></b> Built and integrated the UAV hardware platform for a <strong>24-hour hackathon</strong> emergency-response drone. Selected components, assembled the F450-based platform, integrated a <strong>SpeedyBee F405 V3 stack with Raspberry Pi</strong> onboard compute, and supported mission-planning tests with flight data and hardware feedback.</div>
             <div class="lab">2025 &middot; Personal</div>
-            <div class="val"><b><a href="project-hummingbirb.html" style="color: inherit;">Hummingbirb.</a></b> Designed, built, tuned, and flight-tested a custom carbon-fiber FPV racer. Integrated a SpeedyBee F405 V4 flight stack, GPS-supported safety features, custom wiring, and multiple flight-control peripherals. The platform reached about 70 mph and improved my skills in UAV setup, tuning, repair, and test discipline.</div>
+            <div class="val"><b><a href="project-hummingbirb.html" style="color: inherit;">Hummingbirb.</a></b> Designed, built, tuned, and flight-tested a custom <strong>carbon-fiber FPV racer</strong>. Integrated a <strong>SpeedyBee F405 V4 flight stack</strong>, GPS-supported safety features, custom wiring, and multiple flight-control peripherals. The platform reached <strong>about 70 mph</strong> and improved my skills in UAV setup, tuning, repair, and test discipline.</div>
             <div class="lab">2025 - 2026 &middot; AME 4593</div>
-            <div class="val"><b><a href="project-prometheus.html" style="color: inherit;">PROMETHEUS, Mars Mission Design.</a></b> Served as communications subsystem lead for a Mars orbital solar augmentation mission concept. Evaluated DTE-only, relay-only, hybrid, and hybrid with RF crosslink architectures. Selected a communications approach that used inter-satellite links, scheduled DSN downlink, emergency beacon support, and onboard store-and-forward data handling for 4 to 24 minute one-way light-time delays.</div>
+            <div class="val"><b><a href="project-prometheus.html" style="color: inherit;">PROMETHEUS, Mars Mission Design.</a></b> Served as <strong>communications subsystem lead</strong> for a Mars orbital solar augmentation mission concept. Evaluated DTE-only, relay-only, hybrid, and hybrid with RF crosslink architectures. Selected a communications approach that used inter-satellite links, scheduled DSN downlink, emergency beacon support, and onboard store-and-forward data handling for <strong>4 to 24 minute one-way light-time delays</strong>.</div>
             <div class="lab">Jun - Aug 2024</div>
-            <div class="val"><b><a href="project-tilt-rotor.html" style="color: inherit;">Tilt-Rotor UAV.</a></b> Supported summer research on autonomous flight for a tilt-rotor UAV. Integrated ROS2 workflows with a Pixhawk flight controller, configured RC and flight-control communication, and used Mission Planner for flight planning, telemetry review, and post-flight analysis.</div>
+            <div class="val"><b><a href="project-tilt-rotor.html" style="color: inherit;">Tilt-Rotor UAV.</a></b> Supported summer research on autonomous flight for a tilt-rotor UAV. Integrated <strong>ROS2 workflows with a Pixhawk flight controller</strong>, configured RC and flight-control communication, and used <strong>Mission Planner</strong> for flight planning, telemetry review, and post-flight analysis.</div>
             <div class="lab">2024 - Now &middot; AIROU</div>
-            <div class="val"><b><a href="project-autonomous-drone.html" style="color: inherit;">Autonomous Drone.</a></b> Supported autonomous UAV test operations at AIROU through ROS2 subsystem integration, telemetry analysis, test procedure development, and fault isolation. Used Python, MATLAB, PX4, and Linux workflows to review logs, validate system behavior, and reduce setup errors before flight runs.</div>
+            <div class="val"><b><a href="project-autonomous-drone.html" style="color: inherit;">Autonomous Drone.</a></b> Supported autonomous UAV test operations at AIROU through <strong>ROS2 subsystem integration</strong>, telemetry analysis, test procedure development, and fault isolation. Used <strong>Python, MATLAB, PX4, and Linux</strong> workflows to review logs, validate system behavior, and reduce setup errors before flight runs.</div>
             <div class="lab">Feb - May 2026</div>
-            <div class="val"><b><a href="project-solakair.html" style="color: inherit;">Solakair Internship.</a></b> Worked on aerospace hardware integration, electrical subsystem checkout, and interface control documentation. Performed pinout verification, continuity checks, checkout procedures, discrepancy tracking, CAD updates, and as-built versus as-designed documentation during system bring-up.</div>
+            <div class="val"><b><a href="project-solakair.html" style="color: inherit;">Solakair Internship.</a></b> Worked on aerospace hardware integration, electrical subsystem checkout, and interface control documentation. Performed <strong>pinout verification, continuity checks, checkout procedures</strong>, discrepancy tracking, CAD updates, and as-built versus as-designed documentation during system bring-up.</div>
           </div>
         </section>
       </section>
@@ -359,7 +367,7 @@
 
   <script src="shared/stars.js"></script>
   <script>
-    mountStars({ density: 'soft', speed: 0.4, dim: 0.75 });
+    mountStars({ density: 'soft', speed: 0.4, dim: 0.94 });
   </script>
 </body>
 </html>
